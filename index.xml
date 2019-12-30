@@ -1,0 +1,29 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>吴小布说 on 吴小布说</title>
+        <link>http://localhost:1313/</link>
+        <description>Recent content in 吴小布说 on 吴小布说</description>
+        <generator>Hugo -- gohugo.io</generator>
+        
+            <language>en</language>
+        
+        
+        
+            <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+        
+        
+            <lastBuildDate>Mon, 30 Dec 2019 23:26:11 +0800</lastBuildDate>
+        
+        <atom:link href="http://localhost:1313/" rel="self" type="application/rss+xml" />
+        
+            <item>
+                <title>Posts</title>
+                <link>http://localhost:1313/posts/</link>
+                <pubDate>Mon, 30 Dec 2019 23:26:11 +0800</pubDate>
+                
+                <guid>http://localhost:1313/posts/</guid>
+                <description></description>
+            </item>
+        
+    </channel>
+</rss>
