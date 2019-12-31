@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Theme on 吴小布说</title>
+    <link>http://wuxiaobu.github.io/tags/theme/</link>
+    <description>Recent content in Theme on 吴小布说</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 31 Dec 2019 10:28:44 +0800</lastBuildDate>
+    
+	<atom:link href="http://wuxiaobu.github.io/tags/theme/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dns Resolution</title>
+      <link>http://wuxiaobu.github.io/2019/12/dns-resolution/</link>
+      <pubDate>Tue, 31 Dec 2019 10:28:44 +0800</pubDate>
+      
+      <guid>http://wuxiaobu.github.io/2019/12/dns-resolution/</guid>
+      <description>域名解析各个记录类型的作用与区别 趁着给博客换域名这会，好好整理一下域名解析相关的内容。
+####什么是DNS 域名系统（英文：Domain Name System，缩写：DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。</description>
+    </item>
+    
+  </channel>
+</rss>

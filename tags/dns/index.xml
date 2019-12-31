@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 吴小布说</title>
-    <link>http://wuxiaobu.github.io/posts/</link>
-    <description>Recent content in Posts on 吴小布说</description>
+    <title>DNS on 吴小布说</title>
+    <link>http://wuxiaobu.github.io/tags/dns/</link>
+    <description>Recent content in DNS on 吴小布说</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Tue, 31 Dec 2019 10:28:44 +0800</lastBuildDate>
     
-	<atom:link href="http://wuxiaobu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://wuxiaobu.github.io/tags/dns/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
