@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Go结构体 | 吴小布说</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="go struct">
+<link rel="prev" href="http://wuxiaobu.github.io/2020/01/go-string/" />
+<link rel="canonical" href="http://wuxiaobu.github.io/2020/01/go-struct/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go结构体"/>
+<meta name="twitter:description" content="go struct"/>
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Go结构体",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http:\/\/wuxiaobu.github.io\/2020\/01\/go-struct\/"
+    },
+    
+        "image": {
+            "@type": "ImageObject",
+            "url": "http:\/\/wuxiaobu.github.io\/cover.png",
+            "width":  800 ,
+            "height":  600 
+        },
+    
+    "genre": "posts",
+    
+        "keywords": "Go, Golang",
+    
+    "wordcount":  1084 ,
+    "url": "http:\/\/wuxiaobu.github.io\/2020\/01\/go-struct\/",
+    
+        "datePublished": "2020-01-15T16:25:07\x2b08:00",
+    
+    
+        "dateModified": "2020-01-15T16:25:07\x2b08:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Wu Xiaobu",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "http:\/\/wuxiaobu.github.io\/wufan.jpg",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": "go struct"
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="http://wuxiaobu.github.io/">吴小布说</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="http://wuxiaobu.github.io/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="http://wuxiaobu.github.io/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="http://wuxiaobu.github.io/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="http://wuxiaobu.github.io/about" title="">About</a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="http://wuxiaobu.github.io/">吴小布说</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="http://wuxiaobu.github.io/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="http://wuxiaobu.github.io/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="http://wuxiaobu.github.io/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="http://wuxiaobu.github.io/about" title="">About</a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">Go结构体</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="http://wuxiaobu.github.io/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Wu Xiaobu&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="http://wuxiaobu.github.io/categories/go/">Go</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-01-15>2020-01-15</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1084 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>6 min&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                <h2 class="post-toc-title">Table of Contents</h2>
+                <div class="post-toc-content">
+                    
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>Table of Contents</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <p>Go语言中没有“类”的概念，也不支持“类”的继承等面向对象的概念。Go语言中通过结构体的内嵌再配合接口比面向对象具有更高的扩展性和灵活性。</p>
+
+<p>类型别名和自定义类型
+自定义类型
+在Go语言中有一些基本的数据类型，如string、整型、浮点型、布尔等数据类型， Go语言中可以使用type关键字来定义自定义类型。</p>
+
+<p>自定义类型是定义了一个全新的类型。我们可以基于内置的基本类型定义，也可以通过struct定义。例如：</p>
+
+<p>//将MyInt定义为int类型
+type MyInt int
+通过type关键字的定义，MyInt就是一种新的类型，它具有int的特性。</p>
+
+<p>类型别名
+类型别名是Go1.9版本添加的新功能。</p>
+
+<p>类型别名规定：TypeAlias只是Type的别名，本质上TypeAlias与Type是同一个类型。就像一个孩子小时候有小名、乳名，上学后用学名，英语老师又会给他起英文名，但这些名字都指的是他本人。</p>
+
+<p>type TypeAlias = Type
+我们之前见过的rune和byte就是类型别名，他们的定义如下：</p>
+
+<p>type byte = uint8
+type rune = int32
+类型定义和类型别名的区别
+类型别名与类型定义表面上看只有一个等号的差异，我们通过下面的这段代码来理解它们之间的区别。</p>
+
+<p>//类型定义
+type NewInt int</p>
+
+<p>//类型别名
+type MyInt = int</p>
+
+<p>func main() {
+    var a NewInt
+    var b MyInt</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">fmt.Printf(&#34;type of a:%T\n&#34;, a) //type of a:main.NewInt
+fmt.Printf(&#34;type of b:%T\n&#34;, b) //type of b:int</pre></td></tr></table>
+</div>
+</div>
+<p>}
+结果显示a的类型是main.NewInt，表示main包下定义的NewInt类型。b的类型是int。MyInt类型只会在代码中存在，编译完成时并不会有MyInt类型。</p>
+
+<p>结构体
+Go语言中的基础数据类型可以表示一些事物的基本属性，但是当我们想表达一个事物的全部或部分属性时，这时候再用单一的基本数据类型明显就无法满足需求了，Go语言提供了一种自定义数据类型，可以封装多个基本数据类型，这种数据类型叫结构体，英文名称struct。 也就是我们可以通过struct来定义自己的类型了。</p>
+
+<p>Go语言中通过struct来实现面向对象。</p>
+
+<p>结构体的定义
+使用type和struct关键字来定义结构体，具体代码格式如下：</p>
+
+<p>type 类型名 struct {
+    字段名 字段类型
+    字段名 字段类型
+    …
+}
+其中：</p>
+
+<p>类型名：标识自定义结构体的名称，在同一个包内不能重复。
+字段名：表示结构体字段名。结构体中的字段名必须唯一。
+字段类型：表示结构体字段的具体类型。
+举个例子，我们定义一个Person（人）结构体，代码如下：</p>
+
+<p>type person struct {
+    name string
+    city string
+    age  int8
+}
+同样类型的字段也可以写在一行，</p>
+
+<p>type person1 struct {
+    name, city string
+    age        int8
+}
+这样我们就拥有了一个person的自定义类型，它有name、city、age三个字段，分别表示姓名、城市和年龄。这样我们使用这个person结构体就能够很方便的在程序中表示和存储人信息了。</p>
+
+<p>语言内置的基础数据类型是用来描述一个值的，而结构体是用来描述一组值的。比如一个人有名字、年龄和居住城市等，本质上是一种聚合型的数据类型</p>
+
+<p>结构体实例化
+只有当结构体实例化时，才会真正地分配内存。也就是必须实例化后才能使用结构体的字段。</p>
+
+<p>结构体本身也是一种类型，我们可以像声明内置类型一样使用var关键字声明结构体类型。</p>
+
+<p>var 结构体实例 结构体类型
+基本实例化
+举个例子：</p>
+
+<p>type person struct {
+    name string
+    city string
+    age  int8
+}</p>
+
+<p>func main() {
+    var p1 person
+    p1.name = &ldquo;沙河娜扎&rdquo;
+    p1.city = &ldquo;北京&rdquo;
+    p1.age = 18
+    fmt.Printf(&ldquo;p1=%v\n&rdquo;, p1)  //p1={沙河娜扎 北京 18}
+    fmt.Printf(&ldquo;p1=%#v\n&rdquo;, p1) //p1=main.person{name:&ldquo;沙河娜扎&rdquo;, city:&ldquo;北京&rdquo;, age:18}
+}
+我们通过.来访问结构体的字段（成员变量）,例如p1.name和p1.age等。</p>
+
+<p>匿名结构体
+在定义一些临时数据结构等场景下还可以使用匿名结构体。</p>
+
+<p>package main</p>
+
+<p>import (
+    &ldquo;fmt&rdquo;
+)</p>
+
+<p>func main() {
+    var user struct{Name string; Age int}
+    user.Name = &ldquo;小王子&rdquo;
+    user.Age = 18
+    fmt.Printf(&ldquo;%#v\n&rdquo;, user)
+}
+创建指针类型结构体
+我们还可以通过使用new关键字对结构体进行实例化，得到的是结构体的地址。 格式如下：</p>
+
+<p>var p2 = new(person)
+fmt.Printf(&ldquo;%T\n&rdquo;, p2)     //*main.person
+fmt.Printf(&ldquo;p2=%#v\n&rdquo;, p2) //p2=&amp;main.person{name:&ldquo;&rdquo;, city:&ldquo;&rdquo;, age:0}
+从打印的结果中我们可以看出p2是一个结构体指针。</p>
+
+<p>需要注意的是在Go语言中支持对结构体指针直接使用.来访问结构体的成员。</p>
+
+<p>var p2 = new(person)
+p2.name = &ldquo;小王子&rdquo;
+p2.age = 28
+p2.city = &ldquo;上海&rdquo;
+fmt.Printf(&ldquo;p2=%#v\n&rdquo;, p2) //p2=&amp;main.person{name:&ldquo;小王子&rdquo;, city:&ldquo;上海&rdquo;, age:28}
+取结构体的地址实例化
+使用&amp;对结构体进行取地址操作相当于对该结构体类型进行了一次new实例化操作。</p>
+
+<p>p3 := &amp;person{}
+fmt.Printf(&ldquo;%T\n&rdquo;, p3)     //*main.person
+fmt.Printf(&ldquo;p3=%#v\n&rdquo;, p3) //p3=&amp;main.person{name:&ldquo;&rdquo;, city:&ldquo;&rdquo;, age:0}
+p3.name = &ldquo;七米&rdquo;
+p3.age = 30
+p3.city = &ldquo;成都&rdquo;
+fmt.Printf(&ldquo;p3=%#v\n&rdquo;, p3) //p3=&amp;main.person{name:&ldquo;七米&rdquo;, city:&ldquo;成都&rdquo;, age:30}
+p3.name = &ldquo;七米&rdquo;其实在底层是(*p3).name = &ldquo;七米&rdquo;，这是Go语言帮我们实现的语法糖。</p>
+
+<p>结构体初始化
+没有初始化的结构体，其成员变量都是对应其类型的零值。</p>
+
+<p>type person struct {
+    name string
+    city string
+    age  int8
+}</p>
+
+<p>func main() {
+    var p4 person
+    fmt.Printf(&ldquo;p4=%#v\n&rdquo;, p4) //p4=main.person{name:&ldquo;&rdquo;, city:&ldquo;&rdquo;, age:0}
+}
+使用键值对初始化
+使用键值对对结构体进行初始化时，键对应结构体的字段，值对应该字段的初始值。</p>
+
+<p>p5 := person{
+    name: &ldquo;小王子&rdquo;,
+    city: &ldquo;北京&rdquo;,
+    age:  18,
+}
+fmt.Printf(&ldquo;p5=%#v\n&rdquo;, p5) //p5=main.person{name:&ldquo;小王子&rdquo;, city:&ldquo;北京&rdquo;, age:18}
+也可以对结构体指针进行键值对初始化，例如：</p>
+
+<p>p6 := &amp;person{
+    name: &ldquo;小王子&rdquo;,
+    city: &ldquo;北京&rdquo;,
+    age:  18,
+}
+fmt.Printf(&ldquo;p6=%#v\n&rdquo;, p6) //p6=&amp;main.person{name:&ldquo;小王子&rdquo;, city:&ldquo;北京&rdquo;, age:18}
+当某些字段没有初始值的时候，该字段可以不写。此时，没有指定初始值的字段的值就是该字段类型的零值。</p>
+
+<p>p7 := &amp;person{
+    city: &ldquo;北京&rdquo;,
+}
+fmt.Printf(&ldquo;p7=%#v\n&rdquo;, p7) //p7=&amp;main.person{name:&ldquo;&rdquo;, city:&ldquo;北京&rdquo;, age:0}
+使用值的列表初始化
+初始化结构体的时候可以简写，也就是初始化的时候不写键，直接写值：</p>
+
+<p>p8 := &amp;person{
+    &ldquo;沙河娜扎&rdquo;,
+    &ldquo;北京&rdquo;,
+    28,
+}
+fmt.Printf(&ldquo;p8=%#v\n&rdquo;, p8) //p8=&amp;main.person{name:&ldquo;沙河娜扎&rdquo;, city:&ldquo;北京&rdquo;, age:28}
+使用这种格式初始化时，需要注意：</p>
+
+<p>必须初始化结构体的所有字段。
+初始值的填充顺序必须与字段在结构体中的声明顺序一致。
+该方式不能和键值初始化方式混用。
+结构体内存布局
+结构体占用一块连续的内存。</p>
+
+<p>type test struct {
+    a int8
+    b int8
+    c int8
+    d int8
+}
+n := test{
+    1, 2, 3, 4,
+}
+fmt.Printf(&ldquo;n.a %p\n&rdquo;, &amp;n.a)
+fmt.Printf(&ldquo;n.b %p\n&rdquo;, &amp;n.b)
+fmt.Printf(&ldquo;n.c %p\n&rdquo;, &amp;n.c)
+fmt.Printf(&ldquo;n.d %p\n&rdquo;, &amp;n.d)
+输出：</p>
+
+<p>n.a 0xc0000a0060
+n.b 0xc0000a0061
+n.c 0xc0000a0062
+n.d 0xc0000a0063
+【进阶知识点】关于Go语言中的内存对齐推荐阅读:在 Go 中恰到好处的内存对齐</p>
+
+<p>面试题
+请问下面代码的执行结果是什么？</p>
+
+<p>type student struct {
+    name string
+    age  int
+}</p>
+
+<p>func main() {
+    m := make(map[string]*student)
+    stus := []student{
+        {name: &ldquo;小王子&rdquo;, age: 18},
+        {name: &ldquo;娜扎&rdquo;, age: 23},
+        {name: &ldquo;大王八&rdquo;, age: 9000},
+    }</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">for _, stu := range stus {
+    m[stu.name] = &amp;stu
+}
+for k, v := range m {
+    fmt.Println(k, &#34;=&gt;&#34;, v.name)
+}</pre></td></tr></table>
+</div>
+</div>
+<p>}
+构造函数
+Go语言的结构体没有构造函数，我们可以自己实现。 例如，下方的代码就实现了一个person的构造函数。 因为struct是值类型，如果结构体比较复杂的话，值拷贝性能开销会比较大，所以该构造函数返回的是结构体指针类型。</p>
+
+<p>func newPerson(name, city string, age int8) *person {
+    return &amp;person{
+        name: name,
+        city: city,
+        age:  age,
+    }
+}
+调用构造函数</p>
+
+<p>p9 := newPerson(&ldquo;张三&rdquo;, &ldquo;沙河&rdquo;, 90)
+fmt.Printf(&ldquo;%#v\n&rdquo;, p9) //&amp;main.person{name:&ldquo;张三&rdquo;, city:&ldquo;沙河&rdquo;, age:90}
+方法和接收者
+Go语言中的方法（Method）是一种作用于特定类型变量的函数。这种特定类型变量叫做接收者（Receiver）。接收者的概念就类似于其他语言中的this或者 self。</p>
+
+<p>方法的定义格式如下：</p>
+
+<p>func (接收者变量 接收者类型) 方法名(参数列表) (返回参数) {
+    函数体
+}
+其中，</p>
+
+<p>接收者变量：接收者中的参数变量名在命名时，官方建议使用接收者类型名称首字母的小写，而不是self、this之类的命名。例如，Person类型的接收者变量应该命名为 p，Connector类型的接收者变量应该命名为c等。
+接收者类型：接收者类型和参数类似，可以是指针类型和非指针类型。
+方法名、参数列表、返回参数：具体格式与函数定义相同。
+举个例子：</p>
+
+<p>//Person 结构体
+type Person struct {
+    name string
+    age  int8
+}</p>
+
+<p>//NewPerson 构造函数
+func NewPerson(name string, age int8) *Person {
+    return &amp;Person{
+        name: name,
+        age:  age,
+    }
+}</p>
+
+<p>//Dream Person做梦的方法
+func (p Person) Dream() {
+    fmt.Printf(&ldquo;%s的梦想是学好Go语言！\n&rdquo;, p.name)
+}</p>
+
+<p>func main() {
+    p1 := NewPerson(&ldquo;小王子&rdquo;, 25)
+    p1.Dream()
+}
+方法与函数的区别是，函数不属于任何类型，方法属于特定的类型。</p>
+
+<p>指针类型的接收者
+指针类型的接收者由一个结构体的指针组成，由于指针的特性，调用方法时修改接收者指针的任意成员变量，在方法结束后，修改都是有效的。这种方式就十分接近于其他语言中面向对象中的this或者self。 例如我们为Person添加一个SetAge方法，来修改实例变量的年龄。</p>
+
+<p>// SetAge 设置p的年龄
+// 使用指针接收者
+func (p *Person) SetAge(newAge int8) {
+    p.age = newAge
+}
+调用该方法：</p>
+
+<p>func main() {
+    p1 := NewPerson(&ldquo;小王子&rdquo;, 25)
+    fmt.Println(p1.age) // 25
+    p1.SetAge(30)
+    fmt.Println(p1.age) // 30
+}
+值类型的接收者
+当方法作用于值类型接收者时，Go语言会在代码运行时将接收者的值复制一份。在值类型接收者的方法中可以获取接收者的成员值，但修改操作只是针对副本，无法修改接收者变量本身。</p>
+
+<p>// SetAge2 设置p的年龄
+// 使用值接收者
+func (p Person) SetAge2(newAge int8) {
+    p.age = newAge
+}</p>
+
+<p>func main() {
+    p1 := NewPerson(&ldquo;小王子&rdquo;, 25)
+    p1.Dream()
+    fmt.Println(p1.age) // 25
+    p1.SetAge2(30) // (*p1).SetAge2(30)
+    fmt.Println(p1.age) // 25
+}
+什么时候应该使用指针类型接收者
+需要修改接收者中的值
+接收者是拷贝代价比较大的大对象
+保证一致性，如果有某个方法使用了指针接收者，那么其他的方法也应该使用指针接收者。
+任意类型添加方法
+在Go语言中，接收者的类型可以是任何类型，不仅仅是结构体，任何类型都可以拥有方法。 举个例子，我们基于内置的int类型使用type关键字可以定义新的自定义类型，然后为我们的自定义类型添加方法。</p>
+
+<p>//MyInt 将int定义为自定义MyInt类型
+type MyInt int</p>
+
+<p>//SayHello 为MyInt添加一个SayHello的方法
+func (m MyInt) SayHello() {
+    fmt.Println(&ldquo;Hello, 我是一个int。&rdquo;)
+}
+func main() {
+    var m1 MyInt
+    m1.SayHello() //Hello, 我是一个int。
+    m1 = 100
+    fmt.Printf(&ldquo;%#v  %T\n&rdquo;, m1, m1) //100  main.MyInt
+}
+注意事项： 非本地类型不能定义方法，也就是说我们不能给别的包的类型定义方法。</p>
+
+<p>结构体的匿名字段
+结构体允许其成员字段在声明时没有字段名而只有类型，这种没有名字的字段就称为匿名字段。</p>
+
+<p>//Person 结构体Person类型
+type Person struct {
+    string
+    int
+}</p>
+
+<p>func main() {
+    p1 := Person{
+        &ldquo;小王子&rdquo;,
+        18,
+    }
+    fmt.Printf(&ldquo;%#v\n&rdquo;, p1)        //main.Person{string:&ldquo;北京&rdquo;, int:18}
+    fmt.Println(p1.string, p1.int) //北京 18
+}
+匿名字段默认采用类型名作为字段名，结构体要求字段名称必须唯一，因此一个结构体中同种类型的匿名字段只能有一个。</p>
+
+<p>嵌套结构体
+一个结构体中可以嵌套包含另一个结构体或结构体指针。</p>
+
+<p>//Address 地址结构体
+type Address struct {
+    Province string
+    City     string
+}</p>
+
+<p>//User 用户结构体
+type User struct {
+    Name    string
+    Gender  string
+    Address Address
+}</p>
+
+<p>func main() {
+    user1 := User{
+        Name:   &ldquo;小王子&rdquo;,
+        Gender: &ldquo;男&rdquo;,
+        Address: Address{
+            Province: &ldquo;山东&rdquo;,
+            City:     &ldquo;威海&rdquo;,
+        },
+    }
+    fmt.Printf(&ldquo;user1=%#v\n&rdquo;, user1)//user1=main.User{Name:&ldquo;小王子&rdquo;, Gender:&ldquo;男&rdquo;, Address:main.Address{Province:&ldquo;山东&rdquo;, City:&ldquo;威海&rdquo;}}
+}
+嵌套匿名结构体
+//Address 地址结构体
+type Address struct {
+    Province string
+    City     string
+}</p>
+
+<p>//User 用户结构体
+type User struct {
+    Name    string
+    Gender  string
+    Address //匿名结构体
+}</p>
+
+<p>func main() {
+    var user2 User
+    user2.Name = &ldquo;小王子&rdquo;
+    user2.Gender = &ldquo;男&rdquo;
+    user2.Address.Province = &ldquo;山东&rdquo;    //通过匿名结构体.字段名访问
+    user2.City = &ldquo;威海&rdquo;                //直接访问匿名结构体的字段名
+    fmt.Printf(&ldquo;user2=%#v\n&rdquo;, user2) //user2=main.User{Name:&ldquo;小王子&rdquo;, Gender:&ldquo;男&rdquo;, Address:main.Address{Province:&ldquo;山东&rdquo;, City:&ldquo;威海&rdquo;}}
+}
+当访问结构体成员时会先在结构体中查找该字段，找不到再去匿名结构体中查找。</p>
+
+<p>嵌套结构体的字段名冲突
+嵌套结构体内部可能存在相同的字段名。这个时候为了避免歧义需要指定具体的内嵌结构体的字段。</p>
+
+<p>//Address 地址结构体
+type Address struct {
+    Province   string
+    City       string
+    CreateTime string
+}</p>
+
+<p>//Email 邮箱结构体
+type Email struct {
+    Account    string
+    CreateTime string
+}</p>
+
+<p>//User 用户结构体
+type User struct {
+    Name   string
+    Gender string
+    Address
+    Email
+}</p>
+
+<p>func main() {
+    var user3 User
+    user3.Name = &ldquo;沙河娜扎&rdquo;
+    user3.Gender = &ldquo;男&rdquo;
+    // user3.CreateTime = &ldquo;2019&rdquo; //ambiguous selector user3.CreateTime
+    user3.Address.CreateTime = &ldquo;2000&rdquo; //指定Address结构体中的CreateTime
+    user3.Email.CreateTime = &ldquo;2000&rdquo;   //指定Email结构体中的CreateTime
+}
+结构体的“继承”
+Go语言中使用结构体也可以实现其他编程语言中面向对象的继承。</p>
+
+<p>//Animal 动物
+type Animal struct {
+    name string
+}</p>
+
+<p>func (a *Animal) move() {
+    fmt.Printf(&ldquo;%s会动！\n&rdquo;, a.name)
+}</p>
+
+<p>//Dog 狗
+type Dog struct {
+    Feet    int8
+    *Animal //通过嵌套匿名结构体实现继承
+}</p>
+
+<p>func (d *Dog) wang() {
+    fmt.Printf(&ldquo;%s会汪汪汪~\n&rdquo;, d.name)
+}</p>
+
+<p>func main() {
+    d1 := &amp;Dog{
+        Feet: 4,
+        Animal: &amp;Animal{ //注意嵌套的是结构体指针
+            name: &ldquo;乐乐&rdquo;,
+        },
+    }
+    d1.wang() //乐乐会汪汪汪~
+    d1.move() //乐乐会动！
+}
+结构体字段的可见性
+结构体中字段大写开头表示可公开访问，小写表示私有（仅在定义当前结构体的包中可访问）。</p>
+
+<p>结构体与JSON序列化
+JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。同时也易于机器解析和生成。JSON键值对是用来保存JS对象的一种方式，键/值对组合中的键名写在前面并用双引号&rdquo;&ldquo;包裹，使用冒号:分隔，然后紧接着值；多个键值之间使用英文,分隔。</p>
+
+<p>//Student 学生
+type Student struct {
+    ID     int
+    Gender string
+    Name   string
+}</p>
+
+<p>//Class 班级
+type Class struct {
+    Title    string
+    Students []*Student
+}</p>
+
+<p>func main() {
+    c := &amp;Class{
+        Title:    &ldquo;101&rdquo;,
+        Students: make([]*Student, 0, 200),
+    }
+    for i := 0; i &lt; 10; i++ {
+        stu := &amp;Student{
+            Name:   fmt.Sprintf(&ldquo;stu%02d&rdquo;, i),
+            Gender: &ldquo;男&rdquo;,
+            ID:     i,
+        }
+        c.Students = append(c.Students, stu)
+    }
+    //JSON序列化：结构体&ndash;&gt;JSON格式的字符串
+    data, err := json.Marshal&copy;
+    if err != nil {
+        fmt.Println(&ldquo;json marshal failed&rdquo;)
+        return
+    }
+    fmt.Printf(&ldquo;json:%s\n&rdquo;, data)
+    //JSON反序列化：JSON格式的字符串&ndash;&gt;结构体
+    str := <code>{&quot;Title&quot;:&quot;101&quot;,&quot;Students&quot;:[{&quot;ID&quot;:0,&quot;Gender&quot;:&quot;男&quot;,&quot;Name&quot;:&quot;stu00&quot;},{&quot;ID&quot;:1,&quot;Gender&quot;:&quot;男&quot;,&quot;Name&quot;:&quot;stu01&quot;},{&quot;ID&quot;:2,&quot;Gender&quot;:&quot;男&quot;,&quot;Name&quot;:&quot;stu02&quot;},{&quot;ID&quot;:3,&quot;Gender&quot;:&quot;男&quot;,&quot;Name&quot;:&quot;stu03&quot;},{&quot;ID&quot;:4,&quot;Gender&quot;:&quot;男&quot;,&quot;Name&quot;:&quot;stu04&quot;},{&quot;ID&quot;:5,&quot;Gender&quot;:&quot;男&quot;,&quot;Name&quot;:&quot;stu05&quot;},{&quot;ID&quot;:6,&quot;Gender&quot;:&quot;男&quot;,&quot;Name&quot;:&quot;stu06&quot;},{&quot;ID&quot;:7,&quot;Gender&quot;:&quot;男&quot;,&quot;Name&quot;:&quot;stu07&quot;},{&quot;ID&quot;:8,&quot;Gender&quot;:&quot;男&quot;,&quot;Name&quot;:&quot;stu08&quot;},{&quot;ID&quot;:9,&quot;Gender&quot;:&quot;男&quot;,&quot;Name&quot;:&quot;stu09&quot;}]}</code>
+    c1 := &amp;Class{}
+    err = json.Unmarshal([]byte(str), c1)
+    if err != nil {
+        fmt.Println(&ldquo;json unmarshal failed!&rdquo;)
+        return
+    }
+    fmt.Printf(&ldquo;%#v\n&rdquo;, c1)
+}
+结构体标签（Tag）
+Tag是结构体的元信息，可以在运行的时候通过反射的机制读取出来。 Tag在结构体字段的后方定义，由一对反引号包裹起来，具体的格式如下：</p>
+
+<p><code>key1:&quot;value1&quot; key2:&quot;value2&quot;</code>
+结构体标签由一个或多个键值对组成。键与值使用冒号分隔，值用双引号括起来。键值对之间使用一个空格分隔。 注意事项： 为结构体编写Tag时，必须严格遵守键值对的规则。结构体标签的解析代码的容错能力很差，一旦格式写错，编译和运行时都不会提示任何错误，通过反射也无法正确取值。例如不要在key和value之间添加空格。</p>
+
+<p>例如我们为Student结构体的每个字段定义json序列化时使用的Tag：</p>
+
+<p>//Student 学生
+type Student struct {
+    ID     int    <code>json:&quot;id&quot;</code> //通过指定tag实现json序列化该字段时的key
+    Gender string //json序列化是默认使用字段名作为key
+    name   string //私有不能被json包访问
+}</p>
+
+<p>func main() {
+    s1 := Student{
+        ID:     1,
+        Gender: &ldquo;男&rdquo;,
+        name:   &ldquo;沙河娜扎&rdquo;,
+    }
+    data, err := json.Marshal(s1)
+    if err != nil {
+        fmt.Println(&ldquo;json marshal failed!&rdquo;)
+        return
+    }
+    fmt.Printf(&ldquo;json str:%s\n&rdquo;, data) //json str:{&ldquo;id&rdquo;:1,&ldquo;Gender&rdquo;:&ldquo;男&rdquo;}
+}</p>
+
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2020-01-15</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="http://wuxiaobu.github.io/2020/01/go-struct/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=http%3a%2f%2fwuxiaobu.github.io%2f2020%2f01%2fgo-struct%2f&amp;text=Go%e7%bb%93%e6%9e%84%e4%bd%93&amp;via=" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwuxiaobu.github.io%2f2020%2f01%2fgo-struct%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+        <a href="//reddit.com/submit?url=http%3a%2f%2fwuxiaobu.github.io%2f2020%2f01%2fgo-struct%2f&amp;title=Go%e7%bb%93%e6%9e%84%e4%bd%93" target="_blank" title="Share on Reddit">
+            <i class="fab fa-reddit fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+    
+        <a href="//service.weibo.com/share/share.php?url=http%3a%2f%2fwuxiaobu.github.io%2f2020%2f01%2fgo-struct%2f&amp;appkey=&amp;title=Go%e7%bb%93%e6%9e%84%e4%bd%93" target="_blank" title="Share on Weibo">
+            <i class="fab fa-weibo fa-fw"></i>
+        </a>
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="http://wuxiaobu.github.io/tags/go/"><i class="fas fa-tag fa-fw"></i>Go</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="http://wuxiaobu.github.io/tags/golang/"><i class="fas fa-tag fa-fw"></i>Golang</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="http://wuxiaobu.github.io/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="http://wuxiaobu.github.io/2020/01/go-string/" class="prev" rel="prev" title="Go语言基础之基本数据类型"><i class="fas fa-angle-left fa-fw"></i>Go语言基础之基本数据类型</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+            Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a>&nbsp;|&nbsp;Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://wuxiaobu.github.io/">Wu Xiaobu</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>

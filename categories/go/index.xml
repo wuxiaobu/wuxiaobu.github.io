@@ -7,10 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 10 Jan 2020 15:10:45 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2020 16:25:07 +0800</lastBuildDate>
     
 	<atom:link href="http://wuxiaobu.github.io/categories/go/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Go结构体</title>
+      <link>http://wuxiaobu.github.io/2020/01/go-struct/</link>
+      <pubDate>Wed, 15 Jan 2020 16:25:07 +0800</pubDate>
+      
+      <guid>http://wuxiaobu.github.io/2020/01/go-struct/</guid>
+      <description>Go语言中没有“类”的概念，也不支持“类”的继承等面向对象的概念。Go语言中通过结构体的内嵌再配合接口比面向对象具有更高的扩展性和灵活性。
+类型别名和自定义类型 自定义类型 在Go语言中有一些基本的数据类型，如string、整型、浮点型、布尔等数据类型， Go语言中可以使用type关键字来定义自定义类型。
+自定义类型是定义了一个全新的类型。我们可以基于内置的基本类型定义，也可以通过struct定义。例如：
+//将MyInt定义为int类型 type MyInt int 通过type关键字的定义，MyInt就是一种新的类型，它具有int的特性。
+类型别名 类型别名是Go1.9版本添加的新功能。
+类型别名规定：TypeAlias只是Type的别名，本质上TypeAlias与Type是同一个类型。就像一个孩子小时候有小名、乳名，上学后用学名，英语老师又会给他起英文名，但这些名字都指的是他本人。
+type TypeAlias = Type 我们之前见过的rune和byte就是类型别名，他们的定义如下：
+type byte = uint8 type rune = int32 类型定义和类型别名的区别 类型别名与类型定义表面上看只有一个等号的差异，我们通过下面的这段代码来理解它们之间的区别。
+//类型定义 type NewInt int
+//类型别名 type MyInt = int
+func main() { var a NewInt var b MyInt
+1 2  fmt.Printf(&amp;#34;type of a:%T\n&amp;#34;, a) //type of a:main.NewInt fmt.Printf(&amp;#34;type of b:%T\n&amp;#34;, b) //type of b:int   } 结果显示a的类型是main.NewInt，表示main包下定义的NewInt类型。b的类型是int。MyInt类型只会在代码中存在，编译完成时并不会有MyInt类型。
+结构体 Go语言中的基础数据类型可以表示一些事物的基本属性，但是当我们想表达一个事物的全部或部分属性时，这时候再用单一的基本数据类型明显就无法满足需求了，Go语言提供了一种自定义数据类型，可以封装多个基本数据类型，这种数据类型叫结构体，英文名称struct。 也就是我们可以通过struct来定义自己的类型了。</description>
+    </item>
     
     <item>
       <title>Go语言基础之基本数据类型</title>
