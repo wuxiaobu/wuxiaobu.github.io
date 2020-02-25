@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on 吴小布说</title>
+    <link>http://wuxiaobu.github.io/categories/go/</link>
+    <description>Recent content in Go on 吴小布说</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 10 Jan 2020 15:10:45 +0800</lastBuildDate>
+    
+	<atom:link href="http://wuxiaobu.github.io/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go语言基础之基本数据类型</title>
+      <link>http://wuxiaobu.github.io/2020/01/go-string/</link>
+      <pubDate>Fri, 10 Jan 2020 15:10:45 +0800</pubDate>
+      
+      <guid>http://wuxiaobu.github.io/2020/01/go-string/</guid>
+      <description>Go语言中有丰富的数据类型，除了基本的整型、浮点型、布尔型、字符串外，还有数组、切片、结构体、函数、map、通道（channel）等。Go 语言的基本类型和其他语言大同小异。
+基本数据类型 整型 整型分为以下两个大类： 按长度分为：int8、int16、int32、int64 对应的无符号整型：uint8、uint16、uint32、uint64
+其中，uint8就是我们熟知的byte型，int16对应C语言中的short型，int64对应C语言中的long型。
+   类型 描述     uint8 无符号 8位整型 (0 到 255)   uint16 无符号 16位整型 (0 到 65535)   uint32 无符号 32位整型 (0 到 4294967295)   uint64 无符号 64位整型 (0 到 18446744073709551615)   int8 有符号 8位整型 (-128 到 127)   int16 有符号 16位整型 (-32768 到 32767)   int32 有符号 32位整型 (-2147483648 到 2147483647)   int64 有符号 64位整型 (-9223372036854775808 到 9223372036854775807)    特殊整型    类型 描述     uint 32位操作系统上就是uint32，64位操作系统上就是uint64   int 32位操作系统上就是int32，64位操作系统上就是int64   uintptr 无符号整型，用于存放一个指针    注意： 在使用int和 uint类型时，不能假定它是32位或64位的整型，而是考虑int和uint可能在不同平台上的差异。</description>
+    </item>
+    
+  </channel>
+</rss>
