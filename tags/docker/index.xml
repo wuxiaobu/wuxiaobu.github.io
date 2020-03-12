@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>docker on 吴小布说</title>
-    <link>http://wuxiaobu.github.io/tags/docker/</link>
+    <link>https://blog.wuxiaobu.website/tags/docker/</link>
     <description>Recent content in docker on 吴小布说</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Thu, 12 Mar 2020 21:58:28 +0800</lastBuildDate>
     
-	<atom:link href="http://wuxiaobu.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.wuxiaobu.website/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Dockerfile</title>
-      <link>http://wuxiaobu.github.io/2020/03/dockerfile/</link>
+      <link>https://blog.wuxiaobu.website/2020/03/dockerfile/</link>
       <pubDate>Thu, 12 Mar 2020 21:58:28 +0800</pubDate>
       
-      <guid>http://wuxiaobu.github.io/2020/03/dockerfile/</guid>
+      <guid>https://blog.wuxiaobu.website/2020/03/dockerfile/</guid>
       <description>Dockerfile是一个文本格式的配置文件，用户可以使用Dockerfile来快速创建自定义的镜像。
 一般而言，Dockerfile主体内容分为四部分：基础镜像信息、维护者信息、镜像操作指令和容器启动时执行指令。
 下面给出一个Redis Dockerfile示例：

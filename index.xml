@@ -1,7 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>吴小布说 on 吴小布说</title>
-        <link>http://wuxiaobu.github.io/</link>
+        <link>https://blog.wuxiaobu.website/</link>
         <description>Recent content in 吴小布说 on 吴小布说</description>
         <generator>Hugo -- gohugo.io</generator>
         
@@ -14,14 +14,14 @@
         
             <lastBuildDate>Thu, 12 Mar 2020 21:58:28 +0800</lastBuildDate>
         
-        <atom:link href="http://wuxiaobu.github.io/" rel="self" type="application/rss+xml" />
+        <atom:link href="https://blog.wuxiaobu.website/" rel="self" type="application/rss+xml" />
         
             <item>
                 <title>Posts</title>
-                <link>http://wuxiaobu.github.io/posts/</link>
+                <link>https://blog.wuxiaobu.website/posts/</link>
                 <pubDate>Thu, 12 Mar 2020 21:58:28 +0800</pubDate>
                 
-                <guid>http://wuxiaobu.github.io/posts/</guid>
+                <guid>https://blog.wuxiaobu.website/posts/</guid>
                 <description></description>
             </item>
         

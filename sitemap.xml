@@ -1,7 +1,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
         <url>
-            <loc>http://wuxiaobu.github.io/categories/</loc>
+            <loc>https://blog.wuxiaobu.website/categories/</loc>
             
                 <lastmod>2020-03-12T21:58:28+08:00</lastmod>
             
@@ -15,7 +15,7 @@
         </url>
     
         <url>
-            <loc>http://wuxiaobu.github.io/categories/docker/</loc>
+            <loc>https://blog.wuxiaobu.website/categories/docker/</loc>
             
                 <lastmod>2020-03-12T21:58:28+08:00</lastmod>
             
@@ -29,7 +29,7 @@
         </url>
     
         <url>
-            <loc>http://wuxiaobu.github.io/tags/docker/</loc>
+            <loc>https://blog.wuxiaobu.website/tags/docker/</loc>
             
                 <lastmod>2020-03-12T21:58:28+08:00</lastmod>
             
@@ -43,7 +43,7 @@
         </url>
     
         <url>
-            <loc>http://wuxiaobu.github.io/2020/03/dockerfile/</loc>
+            <loc>https://blog.wuxiaobu.website/2020/03/dockerfile/</loc>
             
                 <lastmod>2020-03-12T21:58:28+08:00</lastmod>
             
@@ -57,7 +57,7 @@
         </url>
     
         <url>
-            <loc>http://wuxiaobu.github.io/posts/</loc>
+            <loc>https://blog.wuxiaobu.website/posts/</loc>
             
                 <lastmod>2020-03-12T21:58:28+08:00</lastmod>
             
@@ -71,7 +71,7 @@
         </url>
     
         <url>
-            <loc>http://wuxiaobu.github.io/tags/</loc>
+            <loc>https://blog.wuxiaobu.website/tags/</loc>
             
                 <lastmod>2020-03-12T21:58:28+08:00</lastmod>
             
@@ -85,7 +85,7 @@
         </url>
     
         <url>
-            <loc>http://wuxiaobu.github.io/</loc>
+            <loc>https://blog.wuxiaobu.website/</loc>
             
                 <lastmod>2020-03-12T21:58:28+08:00</lastmod>
             
@@ -99,7 +99,7 @@
         </url>
     
         <url>
-            <loc>http://wuxiaobu.github.io/tags/go/</loc>
+            <loc>https://blog.wuxiaobu.website/tags/go/</loc>
             
                 <lastmod>2020-01-15T16:25:07+08:00</lastmod>
             
@@ -113,7 +113,7 @@
         </url>
     
         <url>
-            <loc>http://wuxiaobu.github.io/categories/go/</loc>
+            <loc>https://blog.wuxiaobu.website/categories/go/</loc>
             
                 <lastmod>2020-01-15T16:25:07+08:00</lastmod>
             
@@ -127,7 +127,7 @@
         </url>
     
         <url>
-            <loc>http://wuxiaobu.github.io/tags/golang/</loc>
+            <loc>https://blog.wuxiaobu.website/tags/golang/</loc>
             
                 <lastmod>2020-01-15T16:25:07+08:00</lastmod>
             
@@ -141,7 +141,7 @@
         </url>
     
         <url>
-            <loc>http://wuxiaobu.github.io/2020/01/go-struct/</loc>
+            <loc>https://blog.wuxiaobu.website/2020/01/go-struct/</loc>
             
                 <lastmod>2020-01-15T16:25:07+08:00</lastmod>
             
@@ -155,7 +155,7 @@
         </url>
     
         <url>
-            <loc>http://wuxiaobu.github.io/2020/01/go-string/</loc>
+            <loc>https://blog.wuxiaobu.website/2020/01/go-string/</loc>
             
                 <lastmod>2020-01-10T15:10:45+08:00</lastmod>
             
@@ -169,7 +169,7 @@
         </url>
     
         <url>
-            <loc>http://wuxiaobu.github.io/tags/dns/</loc>
+            <loc>https://blog.wuxiaobu.website/tags/dns/</loc>
             
                 <lastmod>2019-12-31T10:28:44+08:00</lastmod>
             
@@ -183,7 +183,7 @@
         </url>
     
         <url>
-            <loc>http://wuxiaobu.github.io/2019/12/dns-resolution/</loc>
+            <loc>https://blog.wuxiaobu.website/2019/12/dns-resolution/</loc>
             
                 <lastmod>2019-12-31T10:28:44+08:00</lastmod>
             
@@ -197,7 +197,7 @@
         </url>
     
         <url>
-            <loc>http://wuxiaobu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
+            <loc>https://blog.wuxiaobu.website/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
             
                 <lastmod>2019-12-31T10:28:44+08:00</lastmod>
             
@@ -211,7 +211,7 @@
         </url>
     
         <url>
-            <loc>http://wuxiaobu.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
+            <loc>https://blog.wuxiaobu.website/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
             
                 <lastmod>2019-12-31T10:28:44+08:00</lastmod>
             

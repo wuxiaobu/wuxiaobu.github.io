@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>计算机网络 on 吴小布说</title>
-    <link>http://wuxiaobu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+    <link>https://blog.wuxiaobu.website/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
     <description>Recent content in 计算机网络 on 吴小布说</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Tue, 31 Dec 2019 10:28:44 +0800</lastBuildDate>
     
-	<atom:link href="http://wuxiaobu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.wuxiaobu.website/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>域名解析及各个记录类型的作用与区别</title>
-      <link>http://wuxiaobu.github.io/2019/12/dns-resolution/</link>
+      <link>https://blog.wuxiaobu.website/2019/12/dns-resolution/</link>
       <pubDate>Tue, 31 Dec 2019 10:28:44 +0800</pubDate>
       
-      <guid>http://wuxiaobu.github.io/2019/12/dns-resolution/</guid>
+      <guid>https://blog.wuxiaobu.website/2019/12/dns-resolution/</guid>
       <description>趁着给博客换域名这会，好好整理一下域名解析相关的内容。
 什么是DNS 域名系统（英文：Domain Name System，缩写：DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。
 域名解析就是域名到IP地址的转换过程。IP地址是网路上标识您站点的数字地址，为了简单好记，采用域名来代替IP地址标识站点地址。域名的解析工作由DNS服务器完成
