@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -40,7 +40,7 @@
     
         "keywords": "docker",
     
-    "wordcount":  199 ,
+    "wordcount":  200 ,
     "url": "http:\/\/wuxiaobu.github.io\/2020\/03\/dockerfile\/",
     
         "datePublished": "2020-03-12T21:58:28\x2b08:00",
@@ -87,11 +87,11 @@
         <div class="navbar-menu">
             
             
-                <a class="menu-item" href="http://wuxiaobu.github.io/posts" title="">Posts</a>
+                <a class="menu-item" href="http://wuxiaobu.github.io/posts" title="">文章</a>
             
-                <a class="menu-item" href="http://wuxiaobu.github.io/tags" title="">Tags</a>
+                <a class="menu-item" href="http://wuxiaobu.github.io/tags" title="">标签</a>
             
-                <a class="menu-item" href="http://wuxiaobu.github.io/categories" title="">Categories</a>
+                <a class="menu-item" href="http://wuxiaobu.github.io/categories" title="">分类</a>
             
                 <a class="menu-item" href="http://wuxiaobu.github.io/about" title="">About</a>
             
@@ -112,11 +112,11 @@
         <div class="navbar-menu" id="mobile-menu">
             
             
-                <a class="menu-item" href="http://wuxiaobu.github.io/posts" title="">Posts</a>
+                <a class="menu-item" href="http://wuxiaobu.github.io/posts" title="">文章</a>
             
-                <a class="menu-item" href="http://wuxiaobu.github.io/tags" title="">Tags</a>
+                <a class="menu-item" href="http://wuxiaobu.github.io/tags" title="">标签</a>
             
-                <a class="menu-item" href="http://wuxiaobu.github.io/categories" title="">Categories</a>
+                <a class="menu-item" href="http://wuxiaobu.github.io/categories" title="">分类</a>
             
                 <a class="menu-item" href="http://wuxiaobu.github.io/about" title="">About</a>
             
@@ -137,28 +137,28 @@
             <div class="post-meta-main">
                 <a class="author" href="http://wuxiaobu.github.io/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Wu Xiaobu&nbsp;</a>
                 <span class="post-category">
-                        included in
+                        收录于
                         <i class="far fa-folder fa-fw"></i><a href="http://wuxiaobu.github.io/categories/docker/">docker</a>
                             
                     </span>
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-12>2020-03-12</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 199 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>1 min&nbsp;</div>
+                <i class="fas fa-pencil-alt fa-fw"></i>约 200 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 1 分钟&nbsp;</div>
         </div>
 
         
 
         <div class="post-toc" id="post-toc">
-                <h2 class="post-toc-title">Table of Contents</h2>
+                <h2 class="post-toc-title">目录</h2>
                 <div class="post-toc-content">
                     
                 </div>
             </div>
             <div class="post-toc-mobile" id="post-toc-mobile">
                 <details>
-                    <summary><div class="post-toc-title"><span>Table of Contents</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <summary><div class="post-toc-title"><span>目录</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
                     <div class="post-toc-content">
                         
                         
@@ -257,30 +257,23 @@
 <ol>
 <li><p><strong>FROM</strong></p>
 
-<p>用来指定基础镜像，也就是你要在什么镜像上进行定制。</p></li>
-</ol>
+<p>用来指定基础镜像，也就是你要在什么镜像上进行定制。</p>
 
-<p>格式为FROM <image> [AS <name>]或FROM <image>:<tag> [AS <name>]或FROM<image>@<digest> [AS <name>]。</p>
+<p>格式为FROM <image> [AS <name>]或FROM <image>:<tag> [AS <name>]或FROM<image>@<digest> [AS <name>]。</p></li>
 
-<ol>
-<li><strong>LABEL</strong></li>
-</ol>
+<li><p><strong>LABEL</strong></p>
 
 <p>可以为生成的镜像添加元数据标签信息，可以理解成添加一些说明、描述信息。这些信息可以用来辅助过滤出特定镜像，我这里仅添加了联系方式。</p>
 
-<p>格式为LABEL <key>=<value> <key>=<value> <key>=<value> …。</p>
+<p>格式为LABEL <key>=<value> <key>=<value> <key>=<value> …。</p></li>
 
-<ol>
-<li><strong>ENV</strong></li>
-</ol>
+<li><p><strong>ENV</strong></p>
 
 <p>用来设置环境变量，例如：定义一些系统版本、路径的环境变量，在后续RUN中可以使用（当然不仅仅是RUN中可用），也可以用改写原有的环境变量，例如：PATH，在镜像启动的容器中也会存在。</p>
 
-<p>格式为ENV <key> <value>或ENV <key>=<value> &hellip;。</p>
+<p>格式为ENV <key> <value>或ENV <key>=<value> &hellip;。</p></li>
 
-<ol>
-<li><strong>RUN</strong></li>
-</ol>
+<li><p><strong>RUN</strong></p>
 
 <p>运行指定命令。格式为RUN <command>或<code>RUN [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</code>。注意后者指令会被解析为JSON数组，因此必须用双引号。前者默认将在shell终端中运行命令，即/bin/sh -c；后者则使用exec执行，不会启动shell环境。指定使用其他终端类型可以通过第二种方式实现，例如<code>RUN [&quot;/bin/bash&quot;, &quot;-c&quot;,&quot;echo hello&quot;]</code>。每条RUN指令将在当前镜像基础上执行指定命令，并提交为新的镜像层。当命令较长时可以使用\来换行。例如：</p>
 <div class="highlight"><div class="chroma">
@@ -297,37 +290,33 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dockerfile" data-lang="dockerfile">   RUN apt-get update <span class="se">\
-</span><span class="se"></span>     <span class="o">&amp;&amp;</span> apt-get install -y <span class="se">\
-</span><span class="se"></span>       libjpeg-dev <span class="se">\
-</span><span class="se"></span>       libpng-dev <span class="se">\
-</span><span class="se"></span>       libfreetype6-dev <span class="se">\
-</span><span class="se"></span>     <span class="o">&amp;&amp;</span> docker-php-ext-configure gd <span class="se">\
-</span><span class="se"></span>       --enable-gd-native-ttf <span class="se">\
-</span><span class="se"></span>       --with-jpeg-dir<span class="o">=</span>/usr/include <span class="se">\
-</span><span class="se"></span>       --with-freetype-dir<span class="o">=</span>/usr/include/freetype2 <span class="se">\
-</span><span class="se"></span>       --with-png-dir<span class="o">=</span>/usr/include <span class="err">\</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="k">RUN</span> apt-get update <span class="se">\
+</span><span class="se"></span>    <span class="o">&amp;&amp;</span> apt-get install -y <span class="se">\
+</span><span class="se"></span>    libjpeg-dev <span class="se">\
+</span><span class="se"></span>    libpng-dev <span class="se">\
+</span><span class="se"></span>    libfreetype6-dev <span class="se">\
+</span><span class="se"></span>    <span class="o">&amp;&amp;</span> docker-php-ext-configure gd <span class="se">\
+</span><span class="se"></span>    --enable-gd-native-ttf <span class="se">\
+</span><span class="se"></span>    --with-jpeg-dir<span class="o">=</span>/usr/include <span class="se">\
+</span><span class="se"></span>    --with-freetype-dir<span class="o">=</span>/usr/include/freetype2 <span class="se">\
+</span><span class="se"></span>    --with-png-dir<span class="o">=</span>/usr/include <span class="err">\</span></code></pre></td></tr></table>
 </div>
-</div>
-<ol>
-<li><strong>COPY</strong></li>
-</ol>
+</div></li>
 
-<p>将宿主机的内容复制到容器中指定的路径。格式为COPY <src> <dest>。复制本地主机的<src>（为Dockerfile所在目录的相对路径，文件或目录）下内容到镜像中的<dest>。目标路径不存在时，会自动创建。路径同样支持正则格式。COPY与ADD指令功能类似，当使用本地目录为源目录时，推荐使用COPY。</p>
+<li><p><strong>COPY</strong></p>
 
-<ol>
-<li><strong>EXPOSE</strong>声明镜像内服务监听的端口。一般设置为应用程序使用常见的端口，例如Redis设置为：6379</li>
-</ol>
+<p>将宿主机的内容复制到容器中指定的路径。格式为COPY <src> <dest>。复制本地主机的<src>（为Dockerfile所在目录的相对路径，文件或目录）下内容到镜像中的<dest>。目标路径不存在时，会自动创建。路径同样支持正则格式。COPY与ADD指令功能类似，当使用本地目录为源目录时，推荐使用COPY。</p></li>
+
+<li><p><strong>EXPOSE</strong>
+声明镜像内服务监听的端口。一般设置为应用程序使用常见的端口，例如Redis设置为：6379</p>
 
 <p>格式为EXPOSE <port> [<port>/<protocol>&hellip;]。</p>
 
 <p>*<em>注意该指令只是起到声明作用，并不会自动完成端口映射。</em></p>
 
-<p>如果要映射端口出来，在启动容器时可以使用-P参数（Docker主机会自动分配一个宿主机的临时端口）或-p HOST_PORT:CONTAINER_PORT参数（具体指定所映射的本地端口）</p>
+<p>如果要映射端口出来，在启动容器时可以使用-P参数（Docker主机会自动分配一个宿主机的临时端口）或-p HOST_PORT:CONTAINER_PORT参数（具体指定所映射的本地端口）</p></li>
 
-<ol>
-<li><strong>VOLUME</strong></li>
-</ol>
+<li><p><strong>VOLUME</strong></p>
 
 <p>创建一个数据卷挂载点。格式为VOLUME [&ldquo;/data&rdquo;]。</p>
 
@@ -339,7 +328,8 @@
 
 <p>我们通过docker inspect 查看通过该dockerfile创建的镜像生成的容器，可以看到如下信息</p>
 
-<p><figure><img src=/images/loading.svg data-sizes=auto data-src=../../static/images/image-20200312192015951.png alt=image-20200312192015951 class=lazyload><figcaption class=image-caption>image-20200312192015951</figcaption></figure></p>
+<p><figure><img src=/images/loading.svg data-sizes=auto data-src=/images/image-20200312192015951.png alt=image-20200312192015951 class=lazyload><figcaption class=image-caption>image-20200312192015951</figcaption></figure></p></li>
+</ol>
 
 <p>Dockerfile 已经写好了，通过下面的命令即可创建镜像。</p>
 
@@ -366,7 +356,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>This article is updated with 2020-03-12</span>
+                <span>本文于 2020-03-12 更新</span>
             </div>
             <div class="post-info-license">
                 
@@ -376,7 +366,7 @@
             <div class="post-info-md">
                 
                     
-                        <span><a class="link-to-markdown" href="http://wuxiaobu.github.io/2020/03/dockerfile/index.md" target="_blank"></a></span>
+                        <span><a class="link-to-markdown" href="http://wuxiaobu.github.io/2020/03/dockerfile/index.md" target="_blank">阅读原始文档</a></span>
                     
                 
             </div>
@@ -426,7 +416,7 @@
             
         </section>
         <section>
-            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="http://wuxiaobu.github.io/">Home</a></span>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="http://wuxiaobu.github.io/">主页</a></span>
         </section>
     </div>
 
@@ -449,7 +439,7 @@
             <footer class="footer">
     <div class="copyright">
         <div class="copyright-line">
-            Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a>&nbsp;|&nbsp;Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
+            由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
         </div>
         <div class="copyright-line">
             <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://wuxiaobu.github.io/">Wu Xiaobu</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>

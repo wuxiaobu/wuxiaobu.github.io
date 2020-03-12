@@ -41,62 +41,63 @@ CMD ["redis-server", "/home/work/app/redis/conf/redis.conf"]
 
     用来指定基础镜像，也就是你要在什么镜像上进行定制。
 
-   格式为FROM <image> [AS <name>]或FROM <image>:<tag> [AS <name>]或FROM<image>@<digest> [AS <name>]。
+    格式为FROM <image> [AS <name>]或FROM <image>:<tag> [AS <name>]或FROM<image>@<digest> [AS <name>]。
 
 2. **LABEL**
 
-   可以为生成的镜像添加元数据标签信息，可以理解成添加一些说明、描述信息。这些信息可以用来辅助过滤出特定镜像，我这里仅添加了联系方式。
+    可以为生成的镜像添加元数据标签信息，可以理解成添加一些说明、描述信息。这些信息可以用来辅助过滤出特定镜像，我这里仅添加了联系方式。
 
-   格式为LABEL <key>=<value> <key>=<value> <key>=<value> …。
+    格式为LABEL <key>=<value> <key>=<value> <key>=<value> …。
 
 3. **ENV**
 
-   用来设置环境变量，例如：定义一些系统版本、路径的环境变量，在后续RUN中可以使用（当然不仅仅是RUN中可用），也可以用改写原有的环境变量，例如：PATH，在镜像启动的容器中也会存在。
+    用来设置环境变量，例如：定义一些系统版本、路径的环境变量，在后续RUN中可以使用（当然不仅仅是RUN中可用），也可以用改写原有的环境变量，例如：PATH，在镜像启动的容器中也会存在。
 
-   格式为ENV <key> <value>或ENV <key>=<value> ...。
+    格式为ENV <key> <value>或ENV <key>=<value> ...。
 
 4. **RUN**
 
-   运行指定命令。格式为RUN <command>或`RUN ["executable", "param1", "param2"]`。注意后者指令会被解析为JSON数组，因此必须用双引号。前者默认将在shell终端中运行命令，即/bin/sh -c；后者则使用exec执行，不会启动shell环境。指定使用其他终端类型可以通过第二种方式实现，例如`RUN ["/bin/bash", "-c","echo hello"]`。每条RUN指令将在当前镜像基础上执行指定命令，并提交为新的镜像层。当命令较长时可以使用\来换行。例如：
+    运行指定命令。格式为RUN <command>或`RUN ["executable", "param1", "param2"]`。注意后者指令会被解析为JSON数组，因此必须用双引号。前者默认将在shell终端中运行命令，即/bin/sh -c；后者则使用exec执行，不会启动shell环境。指定使用其他终端类型可以通过第二种方式实现，例如`RUN ["/bin/bash", "-c","echo hello"]`。每条RUN指令将在当前镜像基础上执行指定命令，并提交为新的镜像层。当命令较长时可以使用\来换行。例如：
 
-   ```dockerfile
-   RUN apt-get update \
-     && apt-get install -y \
-       libjpeg-dev \
-       libpng-dev \
-       libfreetype6-dev \
-     && docker-php-ext-configure gd \
-       --enable-gd-native-ttf \
-       --with-jpeg-dir=/usr/include \
-       --with-freetype-dir=/usr/include/freetype2 \
-       --with-png-dir=/usr/include \
-   ```
+    ```dockerfile
+    RUN apt-get update \
+        && apt-get install -y \
+        libjpeg-dev \
+        libpng-dev \
+        libfreetype6-dev \
+        && docker-php-ext-configure gd \
+        --enable-gd-native-ttf \
+        --with-jpeg-dir=/usr/include \
+        --with-freetype-dir=/usr/include/freetype2 \
+        --with-png-dir=/usr/include \
+    ```
 
 5. **COPY**
 
-   将宿主机的内容复制到容器中指定的路径。格式为COPY <src> <dest>。复制本地主机的<src>（为Dockerfile所在目录的相对路径，文件或目录）下内容到镜像中的<dest>。目标路径不存在时，会自动创建。路径同样支持正则格式。COPY与ADD指令功能类似，当使用本地目录为源目录时，推荐使用COPY。
+    将宿主机的内容复制到容器中指定的路径。格式为COPY <src> <dest>。复制本地主机的<src>（为Dockerfile所在目录的相对路径，文件或目录）下内容到镜像中的<dest>。目标路径不存在时，会自动创建。路径同样支持正则格式。COPY与ADD指令功能类似，当使用本地目录为源目录时，推荐使用COPY。
 
-6. **EXPOSE**声明镜像内服务监听的端口。一般设置为应用程序使用常见的端口，例如Redis设置为：6379
+6. **EXPOSE**
+    声明镜像内服务监听的端口。一般设置为应用程序使用常见的端口，例如Redis设置为：6379
 
-   格式为EXPOSE <port> [<port>/<protocol>...]。
+    格式为EXPOSE <port> [<port>/<protocol>...]。
 
-   **注意该指令只是起到声明作用，并不会自动完成端口映射。*
+    **注意该指令只是起到声明作用，并不会自动完成端口映射。*
 
-   如果要映射端口出来，在启动容器时可以使用-P参数（Docker主机会自动分配一个宿主机的临时端口）或-p HOST_PORT:CONTAINER_PORT参数（具体指定所映射的本地端口）
+    如果要映射端口出来，在启动容器时可以使用-P参数（Docker主机会自动分配一个宿主机的临时端口）或-p HOST_PORT:CONTAINER_PORT参数（具体指定所映射的本地端口）
 
 7. **VOLUME**
 
-   创建一个数据卷挂载点。格式为VOLUME ["/data"]。
+    创建一个数据卷挂载点。格式为VOLUME ["/data"]。
 
-   过docker run命令的-v标识创建的挂载点只能对创建的容器有效。
+    过docker run命令的-v标识创建的挂载点只能对创建的容器有效。
 
-   通过Dockerfile的 VOLUME 指令可以在镜像中创建挂载点，这样只要通过该镜像创建的容器都有了挂载点。
+    通过Dockerfile的 VOLUME 指令可以在镜像中创建挂载点，这样只要通过该镜像创建的容器都有了挂载点。
 
-   还有一个区别是，通过 VOLUME 指令创建的挂载点，无法指定主机上对应的目录，是自动生成的。
+    还有一个区别是，通过 VOLUME 指令创建的挂载点，无法指定主机上对应的目录，是自动生成的。
 
-   我们通过docker inspect 查看通过该dockerfile创建的镜像生成的容器，可以看到如下信息
+    我们通过docker inspect 查看通过该dockerfile创建的镜像生成的容器，可以看到如下信息
 
-   ![image-20200312192015951](../../static/images/image-20200312192015951.png)
+    ![image-20200312192015951](/images/image-20200312192015951.png)
 
    
 
