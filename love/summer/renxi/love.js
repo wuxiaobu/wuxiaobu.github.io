@@ -168,8 +168,8 @@
 
             ctx.moveTo(0, 0);
             ctx.scale(0.75, 0.75);
-            ctx.font = "12px 微软雅黑,Verdana";
-	    ctx.fillText(" [xx]", 23, 10);
+            ctx.font = "14px 微软雅黑,Verdana";
+	    ctx.fillText(" [夏天]", 23, 10);
             ctx.restore();
         },
         clear: function() {
