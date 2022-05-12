@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://blog.wuxiaobu.website/sitemap.xml
+Sitemap: https://wuxiaobu.github.io/sitemap.xml

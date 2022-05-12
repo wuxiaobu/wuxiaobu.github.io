@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on 吴小布说</title>
-    <link>https://blog.wuxiaobu.website/categories/git/</link>
+    <link>https://wuxiaobu.github.io/categories/git/</link>
     <description>Recent content in git on 吴小布说</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Sat, 15 Aug 2020 21:11:08 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.wuxiaobu.website/categories/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wuxiaobu.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>常用 Git 命令清单</title>
-      <link>https://blog.wuxiaobu.website/2020/08/git-command/</link>
+      <link>https://wuxiaobu.github.io/2020/08/git-command/</link>
       <pubDate>Sat, 15 Aug 2020 21:11:08 +0800</pubDate>
       
-      <guid>https://blog.wuxiaobu.website/2020/08/git-command/</guid>
+      <guid>https://wuxiaobu.github.io/2020/08/git-command/</guid>
       <description>常用 Git 命令清单 下面是我整理的常用 Git 命令清单。几个专用名词的译名如下。
   Workspace：工作区 Index / Stage：暂存区 Repository：仓库区（或本地仓库） Remote：远程仓库   一、新建代码库  1 2 3 4 5 6 7 8  # 在当前目录新建一个Git代码库 $ git init # 新建一个目录，将其初始化为Git代码库 $ git init [project-name] # 下载一个项目和它的整个代码历史 $ git clone [url]   二、配置 Git的设置文件为.gitconfig，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。
  1 2 3 4 5 6 7 8 9  # 显示当前的Git配置 $ git config --list # 编辑Git配置文件 $ git config -e [--global] # 设置提交代码时的用户信息 $ git config [--global] user.</description>

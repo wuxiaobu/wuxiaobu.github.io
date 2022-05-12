@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web Scraper on 吴小布说</title>
-    <link>https://blog.wuxiaobu.website/tags/web-scraper/</link>
+    <link>https://wuxiaobu.github.io/tags/web-scraper/</link>
     <description>Recent content in Web Scraper on 吴小布说</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Mon, 03 Aug 2020 09:30:05 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.wuxiaobu.website/tags/web-scraper/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wuxiaobu.github.io/tags/web-scraper/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Web Scraper简易教程</title>
-      <link>https://blog.wuxiaobu.website/2020/08/web-scraper/</link>
+      <link>https://wuxiaobu.github.io/2020/08/web-scraper/</link>
       <pubDate>Mon, 03 Aug 2020 09:30:05 +0800</pubDate>
       
-      <guid>https://blog.wuxiaobu.website/2020/08/web-scraper/</guid>
+      <guid>https://wuxiaobu.github.io/2020/08/web-scraper/</guid>
       <description>Web Scraper简易教程 步骤一：下载 Web Scraper Web Scraper 是 Chrome 浏览器上的一个插件，你需要翻墙进入 Chrome 应用商店，下载 Web Scraper 插件。
 步骤二：打开 Web Scraper 先打开一个你想爬数据的网页，比如我想爬今日头条上「吴晓波频道」这个账户的文章标题、时间、评论数，那我就先打开它，再一一进行操作。
 然后用快捷键 Ctrl + Shift + I / F12 打开 Web Scraper。
