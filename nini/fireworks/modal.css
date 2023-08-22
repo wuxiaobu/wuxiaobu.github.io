@@ -7,7 +7,7 @@
 p{ margin: 0; }
 .btn-b{cursor: pointer;}
 .btn-groups{ padding-right: 20px; text-align: center; }
-.heart-btn{ display: inline-block; animation: breath 0.8s linear 0s infinite both; -webkit-animation: breath 0.8s linear 0s infinite both; cursor: pointer;}
+.heart-btn{ display: inline-block; animation: breath 0.9s linear 0s infinite both; -webkit-animation: breath 0.9s linear 0s infinite both; cursor: pointer;}
 .btn{ position: relative; display: inline-block; width: 60px; height: 60px; margin: 0 30px; transform: rotate(45deg); -webkit-transform: rotate(45deg);}
 .btn span{ display: block; width: 100%; height: 100%; line-height: 60px; margin-top: -10px; margin-left: -10px; text-align: center; transform: rotate(-45deg); -webkit-transform: rotate(-45deg); }
 .btn-a{ background: #d26ae5; }
@@ -29,8 +29,8 @@ p{ margin: 0; }
         transform-origin: 50% 50%;
     }
     50%{
-        transform: scale3d(1.02,1.02,1.02);
-        -webkit-transform: scale3d(1.02,1.02,1.02);
+        transform: scale3d(1.04,1.04,1.04);
+        -webkit-transform: scale3d(1.04,1.04,1.04);
         transform-origin: 50% 50%;
     }
     100%{

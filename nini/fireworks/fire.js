@@ -10,13 +10,24 @@ var bigbooms = [];
 //     initAnimate();
 // };
 
-document.getElementById("iframMusic").onload = function(){
-    var music = document.getElementById("music");
-    music.src = 'music.mp3';
-    music.oncanplay = function(){
-        music.play();
-    };
-};
+// document.getElementById("iframMusic").onload = function(){
+//     var music = document.getElementById("music");
+//     music.src = 'music.mp3';
+//     music.oncanplay = function(){
+//         music.play();
+//         music.muted = false;
+//     };
+// };
+
+var playButtons = document.getElementsByClassName("play");
+var media = document.getElementById('music');
+for (let i = 0; i < playButtons.length; i++) {
+    playButtons[i].addEventListener('click', function() {
+        var music = document.getElementById("music");
+        media.play()
+        music.muted = false;
+    });
+}
 
 function initAnimate() {
     drawBg();
@@ -49,7 +60,6 @@ function animate() {
             bigbooms.push(bigboom)
         }
         lastTime = newTime;
-        console.log(bigbooms)
     }
     stars.foreach(function() {
         this.paint()

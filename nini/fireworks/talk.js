@@ -13,6 +13,7 @@ $(function() {
     });
 });
 
+
 function A() {
     modal('我喜欢你！', B);
 }

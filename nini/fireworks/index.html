@@ -29,9 +29,9 @@
     </div>
     <div class="btn-groups">
         <div class="heart-btn">
-            <div id="yes" class="btn btn-a"><span>愿意</span></div>
+            <div id="yes" class="btn btn-a play"><span>愿意</span></div>
         </div>
-        <div id="no" class="btn btn-b"><span>不愿意</span></div>
+        <div id="no" class="btn btn-b play"><span>不愿意</span></div>
     </div>
 </div>
 <!--烟花部分-->
@@ -59,11 +59,10 @@
         开心每一天
     </div>
 </div>
+
 <!--音乐部分-->
-<audio autoplay loop id="music">
-    <source src="music.mp3" />
-</audio>
-<iframe  id="iframMusic" allow="autoplay" style="display:none" src="blank.mp3"></iframe>
+<audio autoplay="autoplay" loop="loop" id="music" muted src="music.mp3"></audio>
+<iframe  id="iframMusic" allow="autoplay" muted style="display:none" src="blank.mp3"></iframe>
 <script src="jquery.min.js"></script>
 <script src="fire.js"></script>
 <script src="talk.js"></script>
