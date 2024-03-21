@@ -1,12 +1,6 @@
 $(function() {
     $('#yes').click(function(event) {
-        modal('我就知道你一定会愿意的。(^_^)', function() {
-            $('.page_one').addClass('hide');
-            $('.page_two').removeClass('hide');
-            // typeWrite();
-            fireworks();
-
-        });
+        fireworks();
     });
     $('#no').click(function(event) {
         modal('明人不说暗话！', A);

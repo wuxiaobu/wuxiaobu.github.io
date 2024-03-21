@@ -1,24 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>计算机网络 on 吴小布说</title>
-    <link>https://wuxiaobu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
-    <description>Recent content in 计算机网络 on 吴小布说</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 31 Dec 2019 10:28:44 +0800</lastBuildDate>
-    
-	<atom:link href="https://wuxiaobu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>域名解析及各个记录类型的作用与区别</title>
-      <link>https://wuxiaobu.github.io/2019/12/dns-resolution/</link>
-      <pubDate>Tue, 31 Dec 2019 10:28:44 +0800</pubDate>
-      
-      <guid>https://wuxiaobu.github.io/2019/12/dns-resolution/</guid>
-      <description>趁着给博客换域名这会，好好整理一下域名解析相关的内容。
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>计算机网络 - Tag - 吴小布说</title>
+        <link>http://localhost:1313/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+        <description>计算机网络 - Tag - 吴小布说</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 31 Dec 2019 10:28:44 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="self" type="application/rss+xml" /><item>
+    <title>域名解析及各个记录类型的作用与区别</title>
+    <link>http://localhost:1313/2019/12/dns-resolution/</link>
+    <pubDate>Tue, 31 Dec 2019 10:28:44 &#43;0800</pubDate>
+    <author>Wu Xiaobu</author>
+    <guid>http://localhost:1313/2019/12/dns-resolution/</guid>
+    <description><![CDATA[趁着给博客换域名这会，好好整理一下域名解析相关的内容。
 什么是DNS 域名系统（英文：Domain Name System，缩写：DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。
 域名解析就是域名到IP地址的转换过程。IP地址是网路上标识您站点的数字地址，为了简单好记，采用域名来代替IP地址标识站点地址。域名的解析工作由DNS服务器完成
 DNS服务器 我们的电脑想要访问一个网址，首先要取得跟这个网址对应的ID地址。
@@ -27,21 +18,22 @@ DNS服务器的IP地址，有可能是动态的，每次上网时由网关分配
 域名的层级 DNS服务器怎么会知道每个域名的IP地址呢？答案是分级查询。
 比如，域名math.stackexchange.com显示为math.stackexchange.com.。这不是疏忽，而是所有域名的尾部，实际上都有一个根域名。 举例来说，www.example.com真正的域名是www.example.com.root，简写为www.example.com.。因为，根域名.root对于所有域名都是一样的，所以平时是省略的。
 根服务器主要用来管理互联网的主目录，全世界IPv4根服务器只有13台（这13台IPv4根域名服务器名字分别为“A”至“M”），1个为主根服务器在美国。其余12个均为辅根服务器，其中9个在美国，欧洲2个，位于英国和瑞典，亚洲1个位于日本。根服务器中有经美国政府批准的260个左右的互联网后缀（如．com、．net、.cn等。
-根域名的下一级，叫做&amp;rdquo;顶级域名&amp;rdquo;（top-level domain，缩写为TLD），比如.com、.net；
-负责解析本身顶级域名下一级域名对应的权威DNS服务器地址。 再下一级叫做&amp;rdquo;次级域名&amp;rdquo;（second-level domain，缩写为SLD），比如www.example.com里面的.example，这一级域名是用户可以注册的；再下一级是主机名（host），比如www.example.com里面的www，又称为&amp;rdquo;三级域名&amp;rdquo;，这是用户在自己的域里面为服务器分配的名称，是用户可以任意分配的。
-1  host.sld.tld.root   DNS解析的过程 当一个用户在地址栏输入www.taobao.com时，DNS解析有大致十个过程，如下：
- 浏览器先检查自身缓存中有没有被解析过的这个域名对应的ip地址，如果有，解析结束。同时域名被缓存的时间也可通过TTL属性来设置。
- 如果浏览器缓存中没有（专业点叫还没命中），浏览器会检查操作系统缓存中有没有对应的已解析过的结果。而操作系统也有一个域名解析的过程。在windows中可通过c盘里一个叫hosts的文件来设置，如果你在这里指定了一个域名对应的ip地址，那浏览器会首先使用这个ip地址。但是这种操作系统级别的域名解析规程也被很多黑客利用，通过修改你的hosts文件里的内容把特定的域名解析到他指定的ip地址上，造成所谓的域名劫持。所以在windows7中将hosts文件设置成了readonly，防止被恶意篡改。
- 如果至此还没有命中域名，才会真正的请求本地域名服务器（LDNS）来解析这个域名，这台服务器一般在你的城市的某个角落，距离你不会很远，并且这台服务器的性能都很好，一般都会缓存域名解析结果，大约80%的域名解析到这里就完成了。
- 如果LDNS仍然没有命中，就直接跳到Root Server 域名服务器请求解析
- 根域名服务器返回给LDNS一个所查询域的主域名服务器（gTLD Server，国际顶尖域名服务器，如.com .cn .org等）地址
- 此时LDNS再发送请求给上一步返回的gTLD
- 接受请求的gTLD查找并返回这个域名对应的Name Server的地址，这个Name Server就是网站注册的域名服务器
- Name Server根据映射关系表找到目标ip，返回给LDNS
- LDNS缓存这个域名和对应的ip
- LDNS把解析的结果返回给用户，用户根据TTL值缓存到本地系统缓存中，域名解析过程至此结束
-  DNS域名解析中添加的各项解析记录  A记录： 将域名指向一个IPv4地址（例如：100.100.100.100），需要增加A记录 CNAME记录： 如果将域名指向一个域名，实现与被指向域名相同的访问效果，需要增加CNAME记录。这个域名一般是主机服务商提供的一个域名 MX记录： 建立电子邮箱服务，将指向邮件服务器地址，需要设置MX记录。建立邮箱时，一般会根据邮箱服务商提供的MX记录填写此记录 NS记录： 域名服务器记录，如果需要把子域名交给其他DNS服务商解析，就需要添加NS记录。比如自己搭建DNS服务器的话也需要做NS记录将主机指向服务器 TXT记录： 可任意填写，可为空。一般做一些验证记录时会使用此项，如：做SPF（反垃圾邮件）记录 AAAA记录： 用来指定主机名（或域名）对应的IPv6地址。A记录对应的是IPV4地址 SRV记录： 添加服务记录服务器服务记录时会添加此项，SRV记录了哪台计算机提供了哪个服务。格式为：服务的名字.</description>
-    </item>
-    
-  </channel>
+根域名的下一级，叫做&quot;顶级域名&quot;（top-level domain，缩写为TLD），比如.com、.net；
+负责解析本身顶级域名下一级域名对应的权威DNS服务器地址。 再下一级叫做&quot;次级域名&quot;（second-level domain，缩写为SLD），比如www.example.com里面的.example，这一级域名是用户可以注册的；再下一级是主机名（host），比如www.example.com里面的www，又称为&quot;三级域名&quot;，这是用户在自己的域里面为服务器分配的名称，是用户可以任意分配的。
+1 host.sld.tld.root DNS解析的过程 当一个用户在地址栏输入www.taobao.com时，DNS解析有大致十个过程，如下：
+浏览器先检查自身缓存中有没有被解析过的这个域名对应的ip地址，如果有，解析结束。同时域名被缓存的时间也可通过TTL属性来设置。
+如果浏览器缓存中没有（专业点叫还没命中），浏览器会检查操作系统缓存中有没有对应的已解析过的结果。而操作系统也有一个域名解析的过程。在windows中可通过c盘里一个叫hosts的文件来设置，如果你在这里指定了一个域名对应的ip地址，那浏览器会首先使用这个ip地址。但是这种操作系统级别的域名解析规程也被很多黑客利用，通过修改你的hosts文件里的内容把特定的域名解析到他指定的ip地址上，造成所谓的域名劫持。所以在windows7中将hosts文件设置成了readonly，防止被恶意篡改。
+如果至此还没有命中域名，才会真正的请求本地域名服务器（LDNS）来解析这个域名，这台服务器一般在你的城市的某个角落，距离你不会很远，并且这台服务器的性能都很好，一般都会缓存域名解析结果，大约80%的域名解析到这里就完成了。
+如果LDNS仍然没有命中，就直接跳到Root Server 域名服务器请求解析
+根域名服务器返回给LDNS一个所查询域的主域名服务器（gTLD Server，国际顶尖域名服务器，如.com .cn .org等）地址
+此时LDNS再发送请求给上一步返回的gTLD
+接受请求的gTLD查找并返回这个域名对应的Name Server的地址，这个Name Server就是网站注册的域名服务器
+Name Server根据映射关系表找到目标ip，返回给LDNS
+LDNS缓存这个域名和对应的ip
+LDNS把解析的结果返回给用户，用户根据TTL值缓存到本地系统缓存中，域名解析过程至此结束
+DNS域名解析中添加的各项解析记录 A记录： 将域名指向一个IPv4地址（例如：100.100.100.100），需要增加A记录 CNAME记录： 如果将域名指向一个域名，实现与被指向域名相同的访问效果，需要增加CNAME记录。这个域名一般是主机服务商提供的一个域名 MX记录： 建立电子邮箱服务，将指向邮件服务器地址，需要设置MX记录。建立邮箱时，一般会根据邮箱服务商提供的MX记录填写此记录 NS记录： 域名服务器记录，如果需要把子域名交给其他DNS服务商解析，就需要添加NS记录。比如自己搭建DNS服务器的话也需要做NS记录将主机指向服务器 TXT记录： 可任意填写，可为空。一般做一些验证记录时会使用此项，如：做SPF（反垃圾邮件）记录 AAAA记录： 用来指定主机名（或域名）对应的IPv6地址。A记录对应的是IPV4地址 SRV记录： 添加服务记录服务器服务记录时会添加此项，SRV记录了哪台计算机提供了哪个服务。格式为：服务的名字.协议的类型 SOA记录： SOA叫做起始授权机构记录，NS用于标识多台域名解析服务器，SOA记录用于在众多NS记录中那一台是主服务器 PTR记录： PTR记录是A记录的逆向记录，又称做IP反查记录或指针记录，负责将IP反向解析为域名 显性URL转发记录： 将域名指向一个http(s)协议地址，访问域名时，自动跳转至目标地址。例如：将www.liuht.cn显性转发到www.itbilu.com后，访问www.liuht.cn时，地址栏显示的地址为：www.itbilu.com。 隐性UR转发记录L： 将域名指向一个http(s)协议地址，访问域名时，自动跳转至目标地址，隐性转发会隐藏真实的目标地址。例如：将www.liuht.cn显性转发到www.itbilu.com后，访问www.liuht.cn时，地址栏显示的地址仍然是：www.liuht.cn 什么是域名的TTL值 TTL(Time-To-Live)，就是一条域名解析记录在DNS服务器中的存留时间。当各地的DNS服务器接受到解析请求时，就会向域名指定的NS服务器(权威域名服务器）发出解析请求从而获得解析记录；在获得这个记录之后，记录会在DNS服务器(各地的缓存服务器，也叫递归域名服务器）中保存一段时间，这段时间内如果再接到这个域名的解析请求，DNS服务器将不再向NS服务器发出请求，而是直接返回刚才获得的记录；而这个记录在DNS服务器上保留的时间，就是TTL值。
+域名DNS分两种，一种是权威域名服务器，域名注册商的服务器都为权威域名服务器，TTL值只能在权威服务器修改，还有一种域名解析服务器就是缓存DNS服务器，比如各地ISP上网设置的DNS服务器，它的作用主要是把域名解析结果缓存到本地，方便你查询。域名DNS的TTL值实际上就是各地的DNS缓存服务器多久去你的权威域名解析服务器（NS)获取一次你域名的解析IP。
+那么域名解析的TTL只应该设置为多少合适呢，下面有两个建议，你可以结合自己参考一下：]]></description>
+</item>
+</channel>
 </rss>

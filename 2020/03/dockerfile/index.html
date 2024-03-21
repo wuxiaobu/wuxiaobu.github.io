@@ -1,207 +1,88 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Dockerfile | 吴小布说</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noodp" />
-<meta name="Description" content="Dockerfile是一个文本格式的配置文件，用户可以使用Dockerfile来快速创建自定义的镜像">
-<link rel="prev" href="https://wuxiaobu.github.io/2020/01/go-struct/" />
-<link rel="next" href="https://wuxiaobu.github.io/2020/08/web-scraper/" />
-<link rel="canonical" href="https://wuxiaobu.github.io/2020/03/dockerfile/" />
-<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Dockerfile - 吴小布说</title><meta name="Description" content="Dockerfile是一个文本格式的配置文件，用户可以使用Dockerfile来快速创建自定义的镜像"><meta property="og:title" content="Dockerfile" />
+<meta property="og:description" content="Dockerfile是一个文本格式的配置文件，用户可以使用Dockerfile来快速创建自定义的镜像" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2020/03/dockerfile/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-03-12T21:58:28+08:00" />
+<meta property="article:modified_time" content="2020-03-12T21:58:28+08:00" /><meta property="og:site_name" content="My cool site" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Dockerfile"/>
 <meta name="twitter:description" content="Dockerfile是一个文本格式的配置文件，用户可以使用Dockerfile来快速创建自定义的镜像"/>
-<script type="application/ld+json">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/2020/03/dockerfile/" /><link rel="prev" href="http://localhost:1313/2020/01/go-struct/" /><link rel="next" href="http://localhost:1313/2020/08/web-scraper/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
-    "@context": "http://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Dockerfile",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https:\/\/wuxiaobu.github.io\/2020\/03\/dockerfile\/"
-    },
-    
-        "image": {
-            "@type": "ImageObject",
-            "url": "https:\/\/wuxiaobu.github.io\/cover.png",
-            "width":  800 ,
-            "height":  600 
-        },
-    
-    "genre": "posts",
-    
-        "keywords": "docker",
-    
-    "wordcount":  200 ,
-    "url": "https:\/\/wuxiaobu.github.io\/2020\/03\/dockerfile\/",
-    
-        "datePublished": "2020-03-12T21:58:28\x2b08:00",
-    
-    
-        "dateModified": "2020-03-12T21:58:28\x2b08:00",
-    
-    
-        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
-    
-    
-        "publisher": {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Dockerfile",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/2020\/03\/dockerfile\/"
+        },"genre": "posts","keywords": "docker","wordcount":  218 ,
+        "url": "http:\/\/localhost:1313\/2020\/03\/dockerfile\/","datePublished": "2020-03-12T21:58:28+08:00","dateModified": "2020-03-12T21:58:28+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
-            "name": "Wu Xiaobu",
-            "logo": {
-            "@type": "ImageObject",
-            "url": "https:\/\/wuxiaobu.github.io\/wufan.jpg",
-            "width":  127 ,
-            "height":  40 
-            }
-        },
-    
-    
-    "description": "Dockerfile是一个文本格式的配置文件，用户可以使用Dockerfile来快速创建自定义的镜像"
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Wu Xiaobu"
+            },"description": "Dockerfile是一个文本格式的配置文件，用户可以使用Dockerfile来快速创建自定义的镜像"
     }
-    </script>
-<link rel="stylesheet" href="/css/style.min.css">
-<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
-<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
-
-    </head>
-    <body>
-        <script>
-            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
-            window.isDark && document.body.classList.add('dark-theme');
-        </script>
-        <div class="wrapper">
-            <nav class="navbar">
-    <div class="navbar-container">
-        <div class="navbar-header animated bounceIn">
-            <a href="https://wuxiaobu.github.io/">吴小布说</a>
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="吴小布说">My cool site</a>
         </div>
-        <div class="navbar-menu">
-            
-            
-                <a class="menu-item" href="https://wuxiaobu.github.io/posts" title="">文章</a>
-            
-                <a class="menu-item" href="https://wuxiaobu.github.io/tags" title="">标签</a>
-            
-                <a class="menu-item" href="https://wuxiaobu.github.io/categories" title="">分类</a>
-            
-                <a class="menu-item" href="https://wuxiaobu.github.io/about" title="">About</a>
-            
-            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts"> Posts </a><a class="menu-item" href="/tags"> Tags </a><a class="menu-item" href="/categories"> Categories </a><a class="menu-item" href="/about"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
         </div>
     </div>
-</nav>
-<nav class="navbar-mobile">
-     <div class="navbar-container">
-        <div class="navbar-header">
-            <div class="navbar-header-title animated bounceIn">
-                <a href="https://wuxiaobu.github.io/">吴小布说</a>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="吴小布说">My cool site</a>
             </div>
-            <div class="menu-toggle" id="menu-toggle">
+            <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="navbar-menu" id="mobile-menu">
-            
-            
-                <a class="menu-item" href="https://wuxiaobu.github.io/posts" title="">文章</a>
-            
-                <a class="menu-item" href="https://wuxiaobu.github.io/tags" title="">标签</a>
-            
-                <a class="menu-item" href="https://wuxiaobu.github.io/categories" title="">分类</a>
-            
-                <a class="menu-item" href="https://wuxiaobu.github.io/about" title="">About</a>
-            
-            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
-        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts" title="">Posts</a><a class="menu-item" href="/tags" title="">Tags</a><a class="menu-item" href="/categories" title="">Categories</a><a class="menu-item" href="/about" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
     </div>
-</nav><main class="main">
-                <div class="container">
-                    
-    
-    
-    
-
-    <article class="post-warp">
-        <h1 class="post-title animated flipInX">Dockerfile</h1>
-
-        <div class="post-meta">
-            <div class="post-meta-main">
-                <a class="author" href="https://wuxiaobu.github.io/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Wu Xiaobu&nbsp;</a>
-                <span class="post-category">
-                        收录于
-                        <i class="far fa-folder fa-fw"></i><a href="https://wuxiaobu.github.io/categories/docker/">docker</a>
-                            
-                    </span>
-            </div>
-            <div class="post-meta-other">
-                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-12>2020-03-12</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 200 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>预计阅读 1 分钟&nbsp;</div>
-        </div>
-
-        
-
-        <div class="post-toc" id="post-toc">
-                <h2 class="post-toc-title">目录</h2>
-                <div class="post-toc-content">
-                    
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Dockerfile</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Wu Xiaobu</a></span>&nbsp;<span class="post-category">included in <a href="/categories/docker/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>docker</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-03-12">2020-03-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;218 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
-            </div>
-            <div class="post-toc-mobile" id="post-toc-mobile">
-                <details>
-                    <summary><div class="post-toc-title"><span>目录</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
-                    <div class="post-toc-content">
-                        
-                        
-                        
-                    </div>
-                </details>
-            </div>
-
-        <div class="post-content">
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            <p>Dockerfile是一个文本格式的配置文件，用户可以使用Dockerfile来快速创建自定义的镜像。</p>
-
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>Dockerfile是一个文本格式的配置文件，用户可以使用Dockerfile来快速创建自定义的镜像。</p>
 <p>一般而言，Dockerfile主体内容分为四部分：基础镜像信息、维护者信息、镜像操作指令和容器启动时执行指令。</p>
-
 <p>下面给出一个Redis  Dockerfile示例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -228,58 +109,55 @@
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="k">FROM</span><span class="s"> redis:4.0.14</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># 解释信息</span><span class="err">
-</span><span class="err"></span>LABEL <span class="nv">maintainer</span><span class="o">=</span><span class="s2">&#34;Wu Xiaobu &lt;woshilieqie@163.com&gt;&#34;</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="k">ENV</span><span class="s"> TZ=Asia/Shanghai \</span><span class="err">
-</span><span class="err"></span>    <span class="nv">DATA_DIR</span><span class="o">=</span>/home/work/app/redis/data <span class="se">\
-</span><span class="se"></span>    <span class="nv">CONF_DIR</span><span class="o">=</span>/home/work/app/redis/conf<span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># 设置系统时区</span><span class="err">
-</span><span class="err"></span><span class="k">RUN</span> ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone<span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="k">RUN</span> groupadd -r work <span class="o">&amp;&amp;</span> useradd -r -g work work<span class="p">;</span> <span class="se">\
-</span><span class="se"></span>    mkdir -p <span class="nv">$DATA_DIR</span> <span class="o">&amp;&amp;</span> mkdir -p <span class="nv">$CONF_DIR</span><span class="p">;</span> <span class="se">\
-</span><span class="se"></span>    chown -R work:work /home<span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># 拷贝配置文件</span><span class="err">
-</span><span class="err"></span>COPY conf/redis.conf <span class="nv">$CONF_DIR</span>/redis.conf<span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="k">VOLUME</span><span class="s"> [$DATA_DIR]</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># 导出端口</span><span class="err">
-</span><span class="err"></span><span class="k">EXPOSE</span><span class="s"> 6379</span><span class="err">
-</span><span class="err"></span><span class="c"># 启动redis</span><span class="err">
-</span><span class="err"></span><span class="k">CMD</span><span class="s"> [&#34;redis-server&#34;, &#34;/home/work/app/redis/conf/redis.conf&#34;]</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="s"> redis:4.0.14</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># 解释信息</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">LABEL</span> <span class="nv">maintainer</span><span class="o">=</span><span class="s2">&#34;Wu Xiaobu &lt;woshilieqie@163.com&gt;&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ENV</span> <span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="nv">DATA_DIR</span><span class="o">=</span>/home/work/app/redis/data <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="nv">CONF_DIR</span><span class="o">=</span>/home/work/app/redis/conf<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># 设置系统时区</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> groupadd -r work <span class="o">&amp;&amp;</span> useradd -r -g work work<span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    mkdir -p <span class="nv">$DATA_DIR</span> <span class="o">&amp;&amp;</span> mkdir -p <span class="nv">$CONF_DIR</span><span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    chown -R work:work /home<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># 拷贝配置文件</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> conf/redis.conf <span class="nv">$CONF_DIR</span>/redis.conf<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">VOLUME</span> <span class="p">[</span><span class="err">$DATA_DIR</span><span class="p">]</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># 导出端口</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="s"> 6379</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># 启动redis</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;redis-server&#34;</span><span class="p">,</span> <span class="s2">&#34;/home/work/app/redis/conf/redis.conf&#34;</span><span class="p">]</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
 </div>
-</div>
-<ol>
-<li><p><strong>FROM</strong></p>
-
+</div><ol>
+<li>
+<p><strong>FROM</strong></p>
 <p>用来指定基础镜像，也就是你要在什么镜像上进行定制。</p>
-
-<p>格式为FROM <image> [AS <name>]或FROM <image>:<tag> [AS <name>]或FROM<image>@<digest> [AS <name>]。</p></li>
-
-<li><p><strong>LABEL</strong></p>
-
+<p>格式为FROM <!-- raw HTML omitted --> [AS <!-- raw HTML omitted -->]或FROM <!-- raw HTML omitted -->:<!-- raw HTML omitted --> [AS <!-- raw HTML omitted -->]或FROM<!-- raw HTML omitted -->@<!-- raw HTML omitted --> [AS <!-- raw HTML omitted -->]。</p>
+</li>
+<li>
+<p><strong>LABEL</strong></p>
 <p>可以为生成的镜像添加元数据标签信息，可以理解成添加一些说明、描述信息。这些信息可以用来辅助过滤出特定镜像，我这里仅添加了联系方式。</p>
-
-<p>格式为LABEL <key>=<value> <key>=<value> <key>=<value> …。</p></li>
-
-<li><p><strong>ENV</strong></p>
-
+<p>格式为LABEL <!-- raw HTML omitted -->=<!-- raw HTML omitted --> <!-- raw HTML omitted -->=<!-- raw HTML omitted --> <!-- raw HTML omitted -->=<!-- raw HTML omitted --> …。</p>
+</li>
+<li>
+<p><strong>ENV</strong></p>
 <p>用来设置环境变量，例如：定义一些系统版本、路径的环境变量，在后续RUN中可以使用（当然不仅仅是RUN中可用），也可以用改写原有的环境变量，例如：PATH，在镜像启动的容器中也会存在。</p>
-
-<p>格式为ENV <key> <value>或ENV <key>=<value> &hellip;。</p></li>
-
-<li><p><strong>RUN</strong></p>
-
-<p>运行指定命令。格式为RUN <command>或<code>RUN [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</code>。注意后者指令会被解析为JSON数组，因此必须用双引号。前者默认将在shell终端中运行命令，即/bin/sh -c；后者则使用exec执行，不会启动shell环境。指定使用其他终端类型可以通过第二种方式实现，例如<code>RUN [&quot;/bin/bash&quot;, &quot;-c&quot;,&quot;echo hello&quot;]</code>。每条RUN指令将在当前镜像基础上执行指定命令，并提交为新的镜像层。当命令较长时可以使用\来换行。例如：</p>
+<p>格式为ENV <!-- raw HTML omitted --> <!-- raw HTML omitted -->或ENV <!-- raw HTML omitted -->=<!-- raw HTML omitted --> &hellip;。</p>
+</li>
+<li>
+<p><strong>RUN</strong></p>
+<p>运行指定命令。格式为RUN <!-- raw HTML omitted -->或<code>RUN [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</code>。注意后者指令会被解析为JSON数组，因此必须用双引号。前者默认将在shell终端中运行命令，即/bin/sh -c；后者则使用exec执行，不会启动shell环境。指定使用其他终端类型可以通过第二种方式实现，例如<code>RUN [&quot;/bin/bash&quot;, &quot;-c&quot;,&quot;echo hello&quot;]</code>。每条RUN指令将在当前镜像基础上执行指定命令，并提交为新的镜像层。当命令较长时可以使用\来换行。例如：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -291,276 +169,96 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="k">RUN</span> apt-get update <span class="se">\
-</span><span class="se"></span>    <span class="o">&amp;&amp;</span> apt-get install -y <span class="se">\
-</span><span class="se"></span>    libjpeg-dev <span class="se">\
-</span><span class="se"></span>    libpng-dev <span class="se">\
-</span><span class="se"></span>    libfreetype6-dev <span class="se">\
-</span><span class="se"></span>    <span class="o">&amp;&amp;</span> docker-php-ext-configure gd <span class="se">\
-</span><span class="se"></span>    --enable-gd-native-ttf <span class="se">\
-</span><span class="se"></span>    --with-jpeg-dir<span class="o">=</span>/usr/include <span class="se">\
-</span><span class="se"></span>    --with-freetype-dir<span class="o">=</span>/usr/include/freetype2 <span class="se">\
-</span><span class="se"></span>    --with-png-dir<span class="o">=</span>/usr/include <span class="err">\</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">RUN</span> apt-get update <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="o">&amp;&amp;</span> apt-get install -y <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    libjpeg-dev <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    libpng-dev <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    libfreetype6-dev <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="o">&amp;&amp;</span> docker-php-ext-configure gd <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --enable-gd-native-ttf <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --with-jpeg-dir<span class="o">=</span>/usr/include <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --with-freetype-dir<span class="o">=</span>/usr/include/freetype2 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --with-png-dir<span class="o">=</span>/usr/include <span class="err">\
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
-
-<li><p><strong>COPY</strong></p>
-
-<p>将宿主机的内容复制到容器中指定的路径。格式为COPY <src> <dest>。复制本地主机的<src>（为Dockerfile所在目录的相对路径，文件或目录）下内容到镜像中的<dest>。目标路径不存在时，会自动创建。路径同样支持正则格式。COPY与ADD指令功能类似，当使用本地目录为源目录时，推荐使用COPY。</p></li>
-
-<li><p><strong>EXPOSE</strong>
+<li>
+<p><strong>COPY</strong></p>
+<p>将宿主机的内容复制到容器中指定的路径。格式为COPY <!-- raw HTML omitted --> <!-- raw HTML omitted -->。复制本地主机的<!-- raw HTML omitted -->（为Dockerfile所在目录的相对路径，文件或目录）下内容到镜像中的<!-- raw HTML omitted -->。目标路径不存在时，会自动创建。路径同样支持正则格式。COPY与ADD指令功能类似，当使用本地目录为源目录时，推荐使用COPY。</p>
+</li>
+<li>
+<p><strong>EXPOSE</strong>
 声明镜像内服务监听的端口。一般设置为应用程序使用常见的端口，例如Redis设置为：6379</p>
-
-<p>格式为EXPOSE <port> [<port>/<protocol>&hellip;]。</p>
-
+<p>格式为EXPOSE <!-- raw HTML omitted --> [<!-- raw HTML omitted -->/<!-- raw HTML omitted -->&hellip;]。</p>
 <p>*<em>注意该指令只是起到声明作用，并不会自动完成端口映射。</em></p>
-
-<p>如果要映射端口出来，在启动容器时可以使用-P参数（Docker主机会自动分配一个宿主机的临时端口）或-p HOST_PORT:CONTAINER_PORT参数（具体指定所映射的本地端口）</p></li>
-
-<li><p><strong>VOLUME</strong></p>
-
-<p>创建一个数据卷挂载点。格式为VOLUME [&ldquo;/data&rdquo;]。</p>
-
+<p>如果要映射端口出来，在启动容器时可以使用-P参数（Docker主机会自动分配一个宿主机的临时端口）或-p HOST_PORT:CONTAINER_PORT参数（具体指定所映射的本地端口）</p>
+</li>
+<li>
+<p><strong>VOLUME</strong></p>
+<p>创建一个数据卷挂载点。格式为VOLUME [&quot;/data&quot;]。</p>
 <p>过docker run命令的-v标识创建的挂载点只能对创建的容器有效。</p>
-
 <p>通过Dockerfile的 VOLUME 指令可以在镜像中创建挂载点，这样只要通过该镜像创建的容器都有了挂载点。</p>
-
 <p>还有一个区别是，通过 VOLUME 指令创建的挂载点，无法指定主机上对应的目录，是自动生成的。</p>
-
 <p>我们通过docker inspect 查看通过该dockerfile创建的镜像生成的容器，可以看到如下信息</p>
-
-<p><figure><img src=/images/loading.svg data-sizes=auto data-src=/images/image-20200312192015951.png alt=image-20200312192015951 class=lazyload><figcaption class=image-caption>image-20200312192015951</figcaption></figure></p></li>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/image-20200312192015951.png"
+        data-srcset="/images/image-20200312192015951.png, /images/image-20200312192015951.png 1.5x, /images/image-20200312192015951.png 2x"
+        data-sizes="auto"
+        alt="/images/image-20200312192015951.png"
+        title="image-20200312192015951" /></p>
+</li>
 </ol>
-
 <p>Dockerfile 已经写好了，通过下面的命令即可创建镜像。</p>
-
 <p><code>docker build -t xiaobu_redis:4.0.14 .</code></p>
-
 <p>编译完成后可用通过<code>docker images</code>查看当前的镜像列表数据</p>
-
 <p>然后通过 <code>docker run --name redis -it -p 6379:6379 -d xiaobu_redis:4.0.14</code> 启动容器。</p>
-
 <p>网络上有非常多关于 Dockerfile 该如何写的最佳实践，有几点特别重要：</p>
-
 <ul>
 <li>一个容器只运行一个进程；</li>
 <li>镜像层数尽可能少，当然还需要考虑可读性等方面的因素；</li>
 <li>RUN指令应该用 \ 分成多行方便阅读；</li>
 <li>容器镜像要尽可能的小。</li>
 </ul>
-
 <p>(未完…)</p>
-
-        </div>
-
-        <div class="post-footer" id="post-footer">
+</div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>本文于 2020-03-12 更新</span>
-            </div>
-            <div class="post-info-license">
-                
-            </div>
-        </div>
+                <span>Updated on 2020-03-12</span>
+            </div></div>
         <div class="post-info-line">
-            <div class="post-info-md">
-                
-                    
-                        <span><a class="link-to-markdown" href="https://wuxiaobu.github.io/2020/03/dockerfile/index.md" target="_blank">阅读原始文档</a></span>
-                    
-                
-            </div>
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2020/03/dockerfile/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
             <div class="post-info-share">
-                
-                    <span>
-    
-        <a href="//twitter.com/share?url=https%3a%2f%2fwuxiaobu.github.io%2f2020%2f03%2fdockerfile%2f&amp;text=Dockerfile&amp;via=" target="_blank" title="Share on Twitter">
-            <i class="fab fa-twitter fa-fw"></i>
-        </a>
-    
-    
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwuxiaobu.github.io%2f2020%2f03%2fdockerfile%2f" target="_blank" title="Share on Facebook">
-            <i class="fab fa-facebook-square fa-fw"></i>
-        </a>
-    
-    
-        <a href="//reddit.com/submit?url=https%3a%2f%2fwuxiaobu.github.io%2f2020%2f03%2fdockerfile%2f&amp;title=Dockerfile" target="_blank" title="Share on Reddit">
-            <i class="fab fa-reddit fa-fw"></i>
-        </a>
-    
-    
-    
-    
-    
-    
-    
-    
-        <a href="//service.weibo.com/share/share.php?url=https%3a%2f%2fwuxiaobu.github.io%2f2020%2f03%2fdockerfile%2f&amp;appkey=&amp;title=Dockerfile" target="_blank" title="Share on Weibo">
-            <i class="fab fa-weibo fa-fw"></i>
-        </a>
-    
-</span>
-                
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:1313/2020/03/dockerfile/" data-title="Dockerfile" data-hashtags="docker"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/2020/03/dockerfile/" data-hashtag="docker"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/2020/03/dockerfile/" data-title="Dockerfile"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/2020/03/dockerfile/" data-title="Dockerfile"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/2020/03/dockerfile/" data-title="Dockerfile" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/docker/">docker</a></section>
         <section>
-            
-                
-                    <span class="tag">
-                        <a href="https://wuxiaobu.github.io/tags/docker/"><i class="fas fa-tag fa-fw"></i>docker</a>
-                    </span>
-                
-            
-        </section>
-        <section>
-            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="https://wuxiaobu.github.io/">主页</a></span>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav">
-        
-            <a href="https://wuxiaobu.github.io/2020/01/go-struct/" class="prev" rel="prev" title="Go结构体"><i class="fas fa-angle-left fa-fw"></i>Go结构体</a>
-        
-        
-            <a href="https://wuxiaobu.github.io/2020/08/web-scraper/" class="next" rel="next" title="Web Scraper简易教程">Web Scraper简易教程<i class="fas fa-angle-right fa-fw"></i></a>
-        
-    </div>
+    <div class="post-nav"><a href="/2020/01/go-struct/" class="prev" rel="prev" title="Go结构体"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Go结构体</a>
+            <a href="/2020/08/web-scraper/" class="next" rel="next" title="Web Scraper简易教程">Web Scraper简易教程<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
-
-        <div class="post-comment">
-            
-            
-
-            
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.111.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Wu Xiaobu</a></span></div>
         </div>
-    </article></div>
-            </main>
-            <footer class="footer">
-    <div class="copyright">
-        <div class="copyright-line">
-            由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
-        </div>
-        <div class="copyright-line">
-            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://wuxiaobu.github.io/">Wu Xiaobu</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
-    </div>
-</footer>
-
-
-    
-    
-
-
-
-
-    
-    
-
-
-
-
-    
-    
-
-
-
-
-
-    
-    
-
-
-
-    
-    
-
-
-
-    
-    
-
-
-
-
-
-    
-    
-
-
-
-
-
-    
-    
-
-
-
-    
-    
-
-
-
-
-
-    
-    
-
-
-
-
-    
-    
-
-
-
-
-    
-    
-
-
-
-    
-    
-
-
-
-
-
-    
-    
-
-
-<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
-<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
-<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
-
-
-    
-    
-
-    
-
-    
-        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
-    
-
-    
-
-    
-
-
-
-
-
-
-<script src="/js/blog.min.js"></script>
-
-
-    
-</div>
-        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
-    </body>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>
